@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
+           id="com.cranberrygame.cordova.plugin.ad.appodeal"
+      version="1.0.0">
+	  
+    <name>Cordova Appodeal plugin</name>
+    <description>Show appodeal banner ad, full screen ad and rewarded video ad.</description>
+    <author>Sang Ki Kwon (Cranberrygame)</author>		
+    <license>MIT</license>
+    <keywords>cordova,plugin,ad,appodeal,monetisation</keywords>
+    <repo>https://github.com/cranberrygame/cordova-plugin-ad-appodeal</repo>
+    <issue>https://github.com/cranberrygame/cordova-plugin-ad-appodeal/issues</issue> 	
+	<engines>
+	    <engine name="cordova" version=">=3.0.0" />
+	</engines>	
+		
+    <js-module src="www/appodeal.js">
+        <clobbers target="window.appodeal" />
+    </js-module>
+
+    <!-- android -->	
+    <platform name="android">
+<!--
+		<dependency id="com.google.playservices" url="https://github.com/MobileChromeApps/google-play-services" commit="00f511a8ce332d4586f067240460bfe978ace2ae" />
+-->		
+		<dependency id="com.google.playservices@19.0.0" />
+		
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="AppodealPlugin" >
+                <param name="android-package" value="com.cranberrygame.cordova.plugin.ad.appodeal.AppodealPlugin"/>
+            </feature>
+        </config-file>
+        
+        <config-file target="AndroidManifest.xml" parent="/manifest">
+            <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+			<uses-permission android:name="android.permission.INTERNET" />
+			<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+			<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+        </config-file>
+		
+		<config-file target="AndroidManifest.xml" parent="/manifest/application">
+			
+			<activity android:name="com.appodeal.ads.InterstitialActivity"
+				android:configChanges="orientation|screenSize"
+				android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+			<activity android:name="com.appodeal.ads.VideoActivity"
+				android:configChanges="orientation|screenSize"
+				android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+			<activity android:name="com.appodeal.ads.LoaderActivity"
+				android:configChanges="orientation|screenSize"
+				android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+
+			<activity android:name="com.google.android.gms.ads.AdActivity"
+				android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
+				android:theme="@android:style/Theme.Translucent" />
+
+			<activity android:name="com.chartboost.sdk.CBImpressionActivity"
+				android:theme="@android:style/Theme.Translucent"
+				android:excludeFromRecents="true" />
+
+			<activity android:name="com.applovin.adview.AppLovinInterstitialActivity"
+				android:theme="@android:style/Theme.Translucent" />
+
+			<activity android:name="com.mopub.mobileads.MoPubActivity"
+				android:configChanges="keyboardHidden|orientation|screenSize"
+				android:theme="@android:style/Theme.Translucent" />
+			<activity android:name="com.mopub.common.MoPubBrowser"
+				android:configChanges="keyboardHidden|orientation|screenSize" />
+			<activity android:name="com.mopub.mobileads.MraidActivity"
+				android:configChanges="keyboardHidden|orientation|screenSize" />
+			<activity android:name="com.mopub.mobileads.MraidVideoPlayerActivity"
+				android:configChanges="keyboardHidden|orientation|screenSize" />
+
+			<activity android:name="org.nexage.sourcekit.mraid.MRAIDBrowser"
+				android:configChanges="orientation|keyboard|keyboardHidden|screenSize"
+				android:theme="@android:style/Theme.Translucent" />
+
+			<activity android:name="com.amazon.device.ads.AdActivity" android:configChanges="keyboardHidden|orientation|screenSize"/>
+
+
+			<activity android:name="com.unity3d.ads.android.view.UnityAdsFullscreenActivity"
+				android:configChanges="fontScale|keyboard|keyboardHidden|locale|mnc|mcc|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode|touchscreen"
+				android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
+				android:hardwareAccelerated="true" />
+				
+			<activity android:name="com.supersonicads.sdk.controller.ControllerActivity"
+				android:configChanges="orientation|screenSize"
+				android:hardwareAccelerated="true" />
+		    <activity android:name="com.supersonicads.sdk.controller.InterstitialActivity"
+				android:configChanges="orientation|screenSize"
+				android:hardwareAccelerated="true"
+				android:theme="@android:style/Theme.Translucent" />
+		    <activity android:name="com.supersonicads.sdk.controller.OpenUrlActivity"
+				android:configChanges="orientation|screenSize"
+				android:hardwareAccelerated="true"/>
+			
+        </config-file>
+        
+		<!-- cranberrygame start: google-play-services.jar -->
+<!--		
+		<config-file target="AndroidManifest.xml" parent="/manifest/application">
+			<meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version" />
+		</config-file>
+-->		
+		<!-- cranberrygame end -->
+		
+        <source-file src="src/android/AppodealPlugin.java" target-dir="src/com/cranberrygame/cordova/plugin/ad/appodeal" />
+        <source-file src="src/android/appodeal-1.12.2.jar" target-dir="libs" />
+		<source-file src="src/android/applovin-sdk-5.4.3.jar" target-dir="libs" />
+		<source-file src="src/android/chartboost-5.2.0.jar" target-dir="libs" />
+		<source-file src="src/android/supersonic-sdk-5.14.jar" target-dir="libs" />
+		<source-file src="src/android/unity-ads-1.3.12.jar" target-dir="libs" />		
+    </platform>
+
+	<!-- ios -->
+	<platform name="ios">
+		<config-file target="config.xml" parent="/*">
+			<feature name="AppodealPlugin">
+				<param name="ios-package" value="AppodealPlugin" />
+			</feature>
+		</config-file>
+				
+		<header-file src="src/ios/AppodealPlugin.h" />
+		<source-file src="src/ios/AppodealPlugin.m" />
+		
+		<framework src="src/ios/AppodealAds.framework" custom="true" />
+		<framework src="src/ios/AmazonAd.framework" custom="true" />
+		<framework src="src/ios/Chartboost.framework" custom="true" />
+        <framework src="src/ios/GoogleMobileAds.framework" custom="true" />
+        <framework src="src/ios/MoPub.framework" custom="true"/>
+        <resource-file src="src/ios/MoPub.framework/Resources/MPCloseButtonX.png"/>
+        <resource-file src="src/ios/MoPub.framework/Resources/MPCloseButtonX@2x.png"/>
+        <resource-file src="src/ios/MoPub.framework/Resources/MRAID.bundle"/>
+        <framework src="src/ios/UnityAds.framework" custom="true" />
+        <resource-file src="src/ios/UnityAds.bundle" />
+        <framework src="libz.dylib" />    
+	</platform>
+</plugin>

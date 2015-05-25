@@ -1,0 +1,84 @@
+<html>
+<head>
+	<script type="text/javascript" src="cordova.js"></script>
+</head>
+<body>
+
+<script>
+
+var applicationKey = "d0d372258e42075f7d0a72029148dcba6c9d3d201a95d3cb";
+var isOverlap = true; //true: overlap, false: split
+var isTest = true;
+/*
+var applicationKey;
+var isOverlap = true; //true: overlap, false: split
+var isTest = true;
+//android
+if (navigator.userAgent.match(/Android/i)) {
+	applicationKey = "d0d372258e42075f7d0a72029148dcba6c9d3d201a95d3cb";
+}
+//ios
+else if (navigator.userAgent.match(/iPhone/i) || navigator.userAgent.match(/iPad/i)) {
+	applicationKey = "a23f1c3c5f3a996c6f92ffdb6cb7f52ba14b26e45aab3188";
+}
+*/
+
+document.addEventListener("deviceready", function(){
+	
+	window.appodeal.setUp(applicationKey, isOverlap, isTest);
+
+	//
+	window.appodeal.onBannerAdLoaded = function() {
+		alert('onBannerAdLoaded');
+	};
+	window.appodeal.onBannerAdShown = function() {
+		alert('onBannerAdShown');
+	};
+	window.appodeal.onBannerAdHidden = function() {
+		alert('onBannerAdHidden');
+	};
+	//
+	window.appodeal.onFullScreenAdLoaded = function() {
+		alert('onFullScreenAdLoaded');
+	};
+	window.appodeal.onFullScreenAdShown = function() {
+		alert('onFullScreenAdShown');
+	};
+	window.appodeal.onFullScreenAdHidden = function() {
+		alert('onFullScreenAdHidden');
+	};
+	//
+	window.appodeal.onRewardedVideoAdLoaded = function() {
+		alert('onRewardedVideoAdLoaded');
+	};
+	window.appodeal.onRewardedVideoAdShown = function() {
+		alert('onRewardedVideoAdShown');
+	};
+	window.appodeal.onRewardedVideoAdHidden = function() {
+		alert('onRewardedVideoAdHidden');
+	};	
+	window.appodeal.onRewardedVideoAdCompleted = function() {
+		alert('onRewardedVideoAdCompleted');
+	};	
+}, false);
+	
+/*
+position: 'top-left', 'top-center', 'top-right', 'left', 'center', 'right', 'bottom-left', 'bottom-center', 'bottom-right'
+*/
+</script>
+
+<p><button onclick="window.appodeal.showBannerAd('top-center');">showBannerAd top-center</button></p>
+<p><button onclick="window.appodeal.showBannerAd('bottom-center');">showBannerAd bottom-center</button></p>
+<p><button onclick="window.appodeal.reloadBannerAd();">reloadBannerAd</button></p>
+<p><button onclick="window.appodeal.hideBannerAd();">hideBannerAd</button></p>
+<br>
+<p><button onclick="window.appodeal.showFullScreenAd();">showFullScreenAd</button></p>
+<br>
+<p><button onclick="window.appodeal.showRewardedVideoAd();">showRewardedVideoAd</button></p>
+<br>
+<p><button onclick="alert(window.appodeal.isShowingBannerAd());">isShowingBannerAd</button></p>
+<p><button onclick="alert(window.appodeal.isShowingFullScreenAd());">isShowingFullScreenAd</button></p>
+<p><button onclick="alert(window.appodeal.isShowingRewardedVideoAd());">isShowingRewardedVideoAd</button></p>
+
+</body>
+</html>
