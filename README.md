@@ -71,7 +71,7 @@ Now all the native plugins are installed automatically: https://plus.google.com/
 
 # API #
 ```javascript
-var applicationKey = "REPLACE_THIS_WITH_YOUR_APPLICATION_KEY";
+var applicationKey = "REPLACE_THIS_WITH_YOUR_APPLICATION_KEY";//requires appodeal account http://appodeal.com/+6ba27c77d92d2eb5cdbb47ee677b1c83
 var isOverlap = true; //true: overlap, false: split
 var isTest = true;
 /*

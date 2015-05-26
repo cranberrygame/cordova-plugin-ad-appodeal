@@ -118,6 +118,7 @@ static NSString *TEST_APPLICATION_KEY = @"c2b9d306d7f83752b2e3509f60cb780d81fccf
 	self.email = email;
 	self.licenseKey_ = licenseKey;
 	
+/*	
 	//
 	NSString *str1 = [self md5:[NSString stringWithFormat:@"com.cranberrygame.cordova.plugin.: %@", email]];
 	NSString *str2 = [self md5:[NSString stringWithFormat:@"com.cranberrygame.cordova.plugin.ad.appodeal: %@", email]];
@@ -141,6 +142,8 @@ static NSString *TEST_APPLICATION_KEY = @"c2b9d306d7f83752b2e3509f60cb780d81fccf
 		//UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Alert" message:@"Cordova Appodeal: invalid email / license key. You can get free license key from https://play.google.com/store/apps/details?id=com.cranberrygame.pluginsforcordova" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
 		//[alert show];	
 	}
+*/
+	self.validLicenseKey = YES;
 }
 
 - (NSString*) md5:(NSString*) input {

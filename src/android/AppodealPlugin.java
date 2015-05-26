@@ -312,7 +312,8 @@ public class AppodealPlugin extends CordovaPlugin {
 	public void _setLicenseKey(String email, String licenseKey) {
 		this.email = email;
 		this.licenseKey = licenseKey;
-		
+
+/*		
 		//
 		String str1 = Util.md5("com.cranberrygame.cordova.plugin.: " + email);
 		String str2 = Util.md5("com.cranberrygame.cordova.plugin.ad.appodeal: " + email);
@@ -337,6 +338,8 @@ public class AppodealPlugin extends CordovaPlugin {
 		}		
 		//if (!this.validLicenseKey)
 		//	Util.alert(cordova.getActivity(),"Cordova Appodeal: invalid email / license key. You can get free license key from https://play.google.com/store/apps/details?id=com.cranberrygame.pluginsforcordova");
+*/
+		this.validLicenseKey = true;
 	}
 	
 	private void _setUp(String applicationKey, boolean isOverlap, boolean isTest) {
@@ -355,7 +358,7 @@ public class AppodealPlugin extends CordovaPlugin {
 		//Appodeal.setAutoCache(Appodeal.BANNER, false);//auto cache: true (default)
 		//Appodeal.setAutoCache(Appodeal.INTERSTITIAL, false);
 		//Appodeal.setAutoCache(Appodeal.VIDEO, false);
-		//Appodeal.setTesting(isTest);//??
+		//Appodeal.setTesting(isTest);//build error
 		Appodeal.setBannerCallbacks(new MyBannerCallbacks());
 		Appodeal.setInterstitialCallbacks(new MyInterstitialCallbacks());
 		Appodeal.setVideoCallbacks(new MyVideoCallbacks());
@@ -371,7 +374,6 @@ public class AppodealPlugin extends CordovaPlugin {
 
     private void loadBannerAd() {
         Appodeal.cache(cordova.getActivity(), Appodeal.BANNER);
-        ////Appodeal.cache(cordova.getActivity(), Appodeal.BANNER_BOTTOM);
     }
     
 	public void _showBannerAd(String position) {
