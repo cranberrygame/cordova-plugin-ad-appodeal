@@ -142,6 +142,10 @@ window.appodeal.showFullScreenAd();
 
 window.appodeal.showRewardedVideoAd();
 
+alert(window.appodeal.loadedBannerAd());//boolean: true or false
+alert(window.appodeal.loadedFullScreenAd());//boolean: true or false
+alert(window.appodeal.loadedRewardedVideoAd());//boolean: true or false
+
 alert(window.appodeal.isShowingBannerAd());//boolean: true or false
 alert(window.appodeal.isShowingFullScreenAd());//boolean: true or false
 alert(window.appodeal.isShowingRewardedVideoAd());//boolean: true or false
