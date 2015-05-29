@@ -1,5 +1,8 @@
 
 module.exports = {
+	_loadedBannerAd: false,
+	_loadedFullScreenAd: false,
+	_loadedRewardedVideoAd: false,
 	_isShowingBannerAd: false,
 	_isShowingFullScreenAd: false,
 	_isShowingRewardedVideoAd: false,
@@ -24,10 +27,13 @@ module.exports = {
 							self.onBannerAdPreloaded();
 					}
 					else if (result == "onBannerAdLoaded") {
+						self._loadedBannerAd = true;
+
 						if (self.onBannerAdLoaded)
 							self.onBannerAdLoaded();
 					}
 					else if (result == "onBannerAdShown") {
+						self._loadedBannerAd = false;
 						self._isShowingBannerAd = true;
 					
 						if (self.onBannerAdShown)
@@ -45,10 +51,13 @@ module.exports = {
 							self.onFullScreenAdPreloaded();
 					}
 					else if (result == "onFullScreenAdLoaded") {
+						self._loadedFullScreenAd = true;
+
 						if (self.onFullScreenAdLoaded)
 							self.onFullScreenAdLoaded();
 					}
 					else if (result == "onFullScreenAdShown") {
+						self._loadedFullScreenAd = false;
 						self._isShowingFullScreenAd = true;
 					
 						if (self.onFullScreenAdShown)
@@ -66,10 +75,13 @@ module.exports = {
 							self.onRewardedVideoAdPreloaded();
 					}
 					else if (result == "onRewardedVideoAdLoaded") {
+						self._loadedRewardedVideoAd = true;
+
 						if (self.onRewardedVideoAdLoaded)
 							self.onRewardedVideoAdLoaded();
 					}
 					else if (result == "onRewardedVideoAdShown") {
+						self._loadedRewardedVideoAd = false;
 						self._isShowingRewardedVideoAd = true;
 					
 						if (self.onRewardedVideoAdShown)
@@ -183,6 +195,15 @@ module.exports = {
             []
         ); 
     },
+	loadedBannerAd: function() {
+		return this._loadedBannerAd;
+	},
+	loadedFullScreenAd: function() {
+		return this._loadedFullScreenAd;
+	},
+	loadedRewardedVideoAd: function() {
+		return this._loadedRewardedVideoAd;
+	},	
 	isShowingBannerAd: function() {
 		return this._isShowingBannerAd;
 	},

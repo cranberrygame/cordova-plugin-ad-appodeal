@@ -124,7 +124,7 @@ static NSString *TEST_APPLICATION_KEY = @"c2b9d306d7f83752b2e3509f60cb780d81fccf
 	NSString *str2 = [self md5:[NSString stringWithFormat:@"com.cranberrygame.cordova.plugin.ad.appodeal: %@", email]];
 	if(licenseKey_ != Nil && ([licenseKey_ isEqualToString:str1] || [licenseKey_ isEqualToString:str2])){
 		self.validLicenseKey = YES;
-		NSArray *excludedLicenseKeys = [NSArray arrayWithObjects: @"995f68522b89ea504577d93232db608c", nil];
+		NSArray *excludedLicenseKeys = [NSArray arrayWithObjects: @"xxx", nil];
 		for (int i = 0 ; i < [excludedLicenseKeys count] ; i++) {
 			if([[excludedLicenseKeys objectAtIndex:i] isEqualToString:licenseKey]) {
 				self.validLicenseKey = NO;
