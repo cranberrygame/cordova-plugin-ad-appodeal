@@ -2,7 +2,7 @@
 
 <plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
            id="com.cranberrygame.cordova.plugin.ad.appodeal"
-      version="1.0.5">
+      version="1.0.7">
 	  
     <name>Cordova Appodeal plugin</name>
     <description>Show appodeal banner ad, full screen ad and rewarded video ad.</description>
@@ -21,11 +21,6 @@
 
     <!-- android -->	
     <platform name="android">
-<!--
-		<dependency id="com.google.playservices" url="https://github.com/MobileChromeApps/google-play-services" commit="00f511a8ce332d4586f067240460bfe978ace2ae" />
--->		
-		<dependency id="com.google.playservices@19.0.0" />
-		
         <config-file target="res/xml/config.xml" parent="/*">
             <feature name="AppodealPlugin" >
                 <param name="android-package" value="com.cranberrygame.cordova.plugin.ad.appodeal.AppodealPlugin"/>
@@ -97,7 +92,7 @@
 			
         </config-file>
         
-		<!-- cranberrygame start: google-play-services.jar -->
+		<!-- cranberrygame start: com.google.playservices -->
 <!--		
 		<config-file target="AndroidManifest.xml" parent="/manifest/application">
 			<meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version" />
@@ -106,11 +101,23 @@
 		<!-- cranberrygame end -->
 		
         <source-file src="src/android/AppodealPlugin.java" target-dir="src/com/cranberrygame/cordova/plugin/ad/appodeal" />
+		
         <source-file src="src/android/appodeal-1.12.2.jar" target-dir="libs" />
 		<source-file src="src/android/applovin-sdk-5.4.3.jar" target-dir="libs" />
 		<source-file src="src/android/chartboost-5.2.0.jar" target-dir="libs" />
 		<source-file src="src/android/supersonic-sdk-5.14.jar" target-dir="libs" />
 		<source-file src="src/android/unity-ads-1.3.12.jar" target-dir="libs" />		
+		<!-- cranberrygame start: com.google.playservices -->
+<!--		
+		<source-file src="src/android/google-play-services.jar" target-dir="libs" />
+		<source-file src="src/android/version.xml" target-dir="res/values" />
+-->		
+		<!-- cranberrygame end -->
+		
+<!--
+		<dependency id="com.google.playservices" url="https://github.com/MobileChromeApps/google-play-services" commit="00f511a8ce332d4586f067240460bfe978ace2ae" />
+-->		
+		<dependency id="com.google.playservices@19.0.0" />
     </platform>
 
 	<!-- ios -->
@@ -125,6 +132,7 @@
 		<source-file src="src/ios/AppodealPlugin.m" />
 		
 		<framework src="src/ios/AppodealAds.framework" custom="true" />
+        <framework src="src/ios/AdColony.framework" custom="true" />
 		<framework src="src/ios/AmazonAd.framework" custom="true" />
 		<framework src="src/ios/Chartboost.framework" custom="true" />
         <framework src="src/ios/GoogleMobileAds.framework" custom="true" />
@@ -134,6 +142,34 @@
         <resource-file src="src/ios/MoPub.framework/Resources/MRAID.bundle"/>
         <framework src="src/ios/UnityAds.framework" custom="true" />
         <resource-file src="src/ios/UnityAds.bundle" />
-        <framework src="libz.dylib" />    
+		<framework src="src/ios/VungleSDK/VungleSDK.framework" custom="true" />
+		<resource-file src="src/ios/VungleSDK/Resources/__vungle.db"/>
+		<resource-file src="src/ios/VungleSDK/Resources/vg_close.png"/>
+		<resource-file src="src/ios/VungleSDK/Resources/vg_cta.png"/>
+		<resource-file src="src/ios/VungleSDK/Resources/vg_mute_off.png"/>
+		<resource-file src="src/ios/VungleSDK/Resources/vg_mute_on.png"/>
+		<resource-file src="src/ios/VungleSDK/Resources/vg_timer.png"/>        
+        <framework src="AdSupport.framework" />
+        <framework src="AVFoundation.framework" />
+        <framework src="AudioToolbox.framework" />
+        <framework src="CoreTelephony.framework" />
+        <framework src="CoreGraphics.framework" />
+        <framework src="EventKit.framework" />
+        <framework src="EventKitUI.framework" />
+        <framework src="MessageUI.framework" />
+        <framework src="StoreKit.framework" />
+        <framework src="SystemConfiguration.framework" />
+        <framework src="CoreLocation.framework" />
+        <framework src="UIKit.framework" />
+        <framework src="CoreMedia.framework" />
+        <framework src="MediaPlayer.framework" />
+        <framework src="QuartzCore.framework" />
+        <framework src="CoreImage.framework" />
+        <framework src="CoreFoundation.framework" />
+        <framework src="Social.framework" />
+        <framework src="WebKit.framework" />
+        <framework src="CFNetwork.framework" />
+        <framework src="libz.dylib" />
+        <framework src="libsqlite3.dylib" />
 	</platform>
 </plugin>

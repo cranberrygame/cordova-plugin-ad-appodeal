@@ -58,9 +58,9 @@ static NSString *TEST_APPLICATION_KEY = @"c2b9d306d7f83752b2e3509f60cb780d81fccf
 	
     self.callbackIdKeepCallback = command.callbackId;
 	
-    [self.commandDelegate runInBackground:^{
+    //[self.commandDelegate runInBackground:^{
 		[self _setUp:applicationKey isOverlap:isOverlap isTest:isTest];	
-    }];
+    //}];
 }
 
 - (void) preloadBannerAd: (CDVInvokedUrlCommand*)command {

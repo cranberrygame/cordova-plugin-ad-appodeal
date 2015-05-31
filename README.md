@@ -14,12 +14,13 @@ chartboost-5.2.0.jar
 supersonic-sdk-5.14.jar
 unity-ads-1.3.12.jar
 
-<Appodeal ios SDK 0.1.6>
-AppodealAds.framework (0.1.6)
+<Appodeal ios SDK 0.2.0>
+AppodealAds.framework (0.2.0)
+AdColony.framework
 AmazonAd.framework
 Chartboost.framework (5.1.3)
 GoogleMobileAds.framework (7.2.2)
-MoPub.framework (3.5.0) (need to check)
+MoPub.framework (3.5.0)
 UnityAds.framework
 Applovin 2.5.4 (need to check)
 

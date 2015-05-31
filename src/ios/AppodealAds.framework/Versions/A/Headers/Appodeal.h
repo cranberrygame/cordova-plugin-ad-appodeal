@@ -109,15 +109,19 @@
  Start Appodeal with required appId and delegate.
  
  @param appId appId The Appodeal application ID for this application. 
- @param delegate The delegate instance to receive Appodeal SDK callbacks.
+ @param autoCache set autoCache.
  @discussion This method must be executed before any other Appodeal SDK methods can be used.
  */
-+ (instancetype)initWithAppId:(NSString*)appId delegate: (id<AODInterstitialDelegate>) delegate;
++ (instancetype)initWithAppId:(NSString*)appId autoCache:(BOOL)autoCache;
+
++ (void)fireEvent:(NSString*)eventName evenData:(NSDictionary*)eventData;
 
 // for Interstitial Ad
 + (void)showInterstitial:(UIViewController*)rootController;
 + (BOOL)isInterstitialLoaded;
++ (void)cacheInterstitial;
 + (void)setInterstitialDelegate:(id<AODInterstitialDelegate>) delegate;
++ (void)setInterstitialAutoCache:(BOOL)autoCache;
 
 // for AdBanner
 + (BOOL)isAdBannerLoaded;
@@ -125,8 +129,19 @@
 // for Video Ad
 + (void)showVideoOrInterstitialAd:(UIViewController*)rootController;
 + (void)showVideoAd:(UIViewController*)rootController;
++ (void)cacheVideoAd;
 + (BOOL)isVideoAdReady;
 + (void)setVideoAdDelegate:(id<AODVideoAdDelegate>) delegate;
++ (void)setVideoAutoCache:(BOOL)autoCache;
+
+/*!
+ @abstract
+ Disable video ads networks
+ 
+ @param adName You can disable following ad networks: unity_ads, adcolony.
+ @discussion This method must be executed after Appodeal intialization.
+ */
++ (void)disableVideoAdNetwork:(NSString*)adName;
 
 /*!
  @abstract
@@ -167,9 +182,18 @@
  Disable interstitial ads networks
  
  @param adName You can disable following ad networks: admob, chartboost, smaato, amazon_ads, applovin, appnexus, mopub, mraid, nexage, openx, tapsense.
-@discussion This method must be executed before Appodeal intialization.
+@discussion This method must be executed after Appodeal intialization.
  */
-+ (void)disableInterstitialAdNetworks:(NSArray*)adNames;
++ (void)disableInterstitialAdNetwork:(NSString*)adName;
+
+/*!
+ @abstract
+ Disable ad network for interstitial and video ads only
+ 
+ @param adName You can disable following ad network: admob, chartboost, unity_ads, adcolony, smaato, amazon_ads, applovin, appnexus, mopub, mraid, nexage, openx, tapsense.
+ @discussion This method must be executed after Appodeal intialization.
+ */
++ (void)disableAdNetwork:(NSString*)adName;
 
 // for debug app
 + (NSArray*)getCachedAds;
