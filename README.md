@@ -52,7 +52,7 @@ Plugin ID: com.cranberrygame.cordova.plugin.ad.appodeal
 ```
 
 ## Cocoon ##
-https://cocoon.io - Create project - [specific project] - Setting - Plugins - Search - cranberrygame - appodeal
+https://cocoon.io - Create project - [specific project] - Setting - Plugins - Search - cranberrygame - appodeal - Save
 
 ## Phonegap build service (config.xml) ##
 https://build.phonegap.com/ - Apps - [specific project] - Update code - Zip file including config.xml
@@ -90,9 +90,6 @@ else if (navigator.userAgent.match(/iPhone/i) || navigator.userAgent.match(/iPad
 */
 
 document.addEventListener("deviceready", function(){
-	//if no license key, 2% ad traffic share for dev support.
-	//you can get free license key from https://play.google.com/store/apps/details?id=com.cranberrygame.pluginsforcordova
-	//window.appodeal.setLicenseKey("yourEmailId@yourEmaildDamin.com", "yourFreeLicenseKey");
 	
 	window.appodeal.setUp(applicationKey, isOverlap, isTest);
 
