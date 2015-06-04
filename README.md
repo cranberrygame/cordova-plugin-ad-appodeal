@@ -53,7 +53,7 @@ Plugin ID: com.cranberrygame.cordova.plugin.ad.appodeal
 ```
 
 ## Cocoon ##
-https://cocoon.io - Create project - [specific project] - Setting - Plugins - Search - cranberrygame - appodeal - Save
+https://cocoon.io - Create project - [specific project] - Setting - Plugins - Custom - Git Url: https://github.com/cranberrygame/cordova-plugin-ad-appodeal.git - INSTALL - Save<br>
 
 ## Phonegap build service (config.xml) ##
 https://build.phonegap.com/ - Apps - [specific project] - Update code - Zip file including config.xml
