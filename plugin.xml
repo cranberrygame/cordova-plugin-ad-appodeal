@@ -2,7 +2,7 @@
 
 <plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
            id="com.cranberrygame.cordova.plugin.ad.appodeal"
-      version="1.0.11">
+      version="1.0.12">
 	  
     <name>Cordova Appodeal plugin</name>
     <description>Show appodeal banner ad, full screen ad and rewarded video ad.</description>
@@ -143,6 +143,7 @@
         <resource-file src="src/ios/MoPub.framework/Resources/MRAID.bundle"/>
         <framework src="src/ios/UnityAds.framework" custom="true" />
         <resource-file src="src/ios/UnityAds.bundle" />
+<!--		
 		<framework src="src/ios/VungleSDK/VungleSDK.framework" custom="true" />
 		<resource-file src="src/ios/VungleSDK/Resources/__vungle.db"/>
 		<resource-file src="src/ios/VungleSDK/Resources/vg_close.png"/>
@@ -150,6 +151,8 @@
 		<resource-file src="src/ios/VungleSDK/Resources/vg_mute_off.png"/>
 		<resource-file src="src/ios/VungleSDK/Resources/vg_mute_on.png"/>
 		<resource-file src="src/ios/VungleSDK/Resources/vg_timer.png"/>        
+-->		
+		<framework src="src/ios/VungleSDK.framework" custom="true" />
         <framework src="AdSupport.framework" />
         <framework src="AVFoundation.framework" />
         <framework src="AudioToolbox.framework" />
