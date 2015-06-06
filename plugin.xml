@@ -143,8 +143,7 @@
         <resource-file src="src/ios/MoPub.framework/Resources/MRAID.bundle"/>
         <framework src="src/ios/UnityAds.framework" custom="true" />
         <resource-file src="src/ios/UnityAds.bundle" />
-        <framework src="src/ios/VungleSDK.embeddedframework" custom="true" />
-<!--
+        <!--framework src="src/ios/VungleSDK.embeddedframework" custom="true" /--><!--build error-->
 		<framework src="src/ios/VungleSDK.embeddedframework/VungleSDK.framework" custom="true" />
 		<resource-file src="src/ios/VungleSDK.embeddedframework/Resources/__vungle.db"/>
 		<resource-file src="src/ios/VungleSDK.embeddedframework/Resources/vg_close.png"/>
@@ -152,7 +151,6 @@
 		<resource-file src="src/ios/VungleSDK.embeddedframework/Resources/vg_mute_off.png"/>
 		<resource-file src="src/ios/VungleSDK.embeddedframework/Resources/vg_mute_on.png"/>
 		<resource-file src="src/ios/VungleSDK.embeddedframework/Resources/vg_timer.png"/>
--->
         <framework src="AdSupport.framework" />
         <framework src="AVFoundation.framework" />
         <framework src="AudioToolbox.framework" />
