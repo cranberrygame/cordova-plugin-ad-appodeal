@@ -24,7 +24,7 @@ Chartboost.framework (5.1.3)
 GoogleMobileAds.framework (7.2.2)
 MoPub.framework (3.5.0)
 UnityAds.framework
-VungleSDK (replace original with vungle 3.0.11 by cranberrygame because of xdk ios duplicate symbol build issus)
+VungleSDK (replace original with vungle 3.0.11 by cranberrygame because of xdk ios duplicate symbol build issue)
 
 This is open source cordova plugin.
 
