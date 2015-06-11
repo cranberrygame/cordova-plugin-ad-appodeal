@@ -2,7 +2,7 @@
 
 <plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
            id="cordova-plugin-ad-appodeal"
-      version="1.0.33">
+      version="1.0.34">
 	  
     <name>Cordova Appodeal plugin</name>
     <description>Show appodeal banner ad, full screen ad and rewarded video ad.</description>
@@ -104,9 +104,11 @@
 		
         <source-file src="src/android/appodeal-1.12.2.jar" target-dir="libs" />
 		<source-file src="src/android/applovin-sdk-5.4.3.jar" target-dir="libs" />
-		<source-file src="src/android/chartboost-5.2.0.jar" target-dir="libs" />
+		<!--source-file src="src/android/chartboost-5.2.0.jar" target-dir="libs" /--><!-- build error when complied with chartboost plugin -->
+		<dependency id="cordova-plugin-ad-chartboost" url="https://github.com/cranberrygame/cordova-plugin-ad-chartboost" />
 		<source-file src="src/android/supersonic-sdk-5.14.jar" target-dir="libs" />
-		<source-file src="src/android/unity-ads-1.3.12.jar" target-dir="libs" />		
+		<!--source-file src="src/android/unity-ads-1.3.12.jar" target-dir="libs" /--><!-- build error when complied with unityads plugin -->
+		<dependency id="cordova-plugin-ad-unityads" url="https://github.com/cranberrygame/cordova-plugin-ad-unityads" />
 		<!-- cranberrygame start: com.google.playservices -->
 <!--		
 		<source-file src="src/android/google-play-services.jar" target-dir="libs" />
@@ -117,7 +119,7 @@
 <!--
 		<dependency id="com.google.playservices" url="https://github.com/MobileChromeApps/google-play-services" commit="00f511a8ce332d4586f067240460bfe978ace2ae" />
 -->		
-		<dependency id="com.google.playservices@19.0.0" />
+		<dependency id="com.google.playservices@21.0.0" />
     </platform>
 
 	<!-- ios -->
@@ -132,25 +134,276 @@
 		<source-file src="src/ios/AppodealPlugin.m" />
 		
 		<framework src="src/ios/AppodealAds.framework" custom="true" />
-        <framework src="src/ios/AdColony.framework" custom="true" />
-        <framework src="src/ios/AerServSDK.framework" custom="true" />
-		<framework src="src/ios/AmazonAd.framework" custom="true" />
-		<framework src="src/ios/Chartboost.framework" custom="true" />
-        <framework src="src/ios/GoogleMobileAds.framework" custom="true" />
-        <framework src="src/ios/MoPub.framework" custom="true"/>
-        <resource-file src="src/ios/MoPub.framework/Resources/MPCloseButtonX.png"/>
-        <resource-file src="src/ios/MoPub.framework/Resources/MPCloseButtonX@2x.png"/>
-        <resource-file src="src/ios/MoPub.framework/Resources/MRAID.bundle"/>
-        <framework src="src/ios/UnityAds.framework" custom="true" />
-        <resource-file src="src/ios/UnityAds.bundle" />
-        <!--framework src="src/ios/VungleSDK.embeddedframework" custom="true" /--><!--build error-->
-		<framework src="src/ios/VungleSDK.embeddedframework/VungleSDK.framework" custom="true" />
-		<resource-file src="src/ios/VungleSDK.embeddedframework/Resources/__vungle.db"/>
-		<resource-file src="src/ios/VungleSDK.embeddedframework/Resources/vg_close.png"/>
-		<resource-file src="src/ios/VungleSDK.embeddedframework/Resources/vg_cta.png"/>
-		<resource-file src="src/ios/VungleSDK.embeddedframework/Resources/vg_mute_off.png"/>
-		<resource-file src="src/ios/VungleSDK.embeddedframework/Resources/vg_mute_on.png"/>
-		<resource-file src="src/ios/VungleSDK.embeddedframework/Resources/vg_timer.png"/>
+        <framework src="src/ios/AdNetworks/AdColony.framework" custom="true" />
+        <framework src="src/ios/AdNetworks/AerServSDK.framework" custom="true" />
+		<framework src="src/ios/AdNetworks/AmazonAd.framework" custom="true" />
+		<framework src="src/ios/AdNetworks/Chartboost.framework" custom="true" />
+        <framework src="src/ios/AdNetworks/GoogleMobileAds.framework" custom="true" />
+		<header-file src="src/ios/AdNetworks/MoPubSDK/MoPub.h" />
+		<source-file src="src/ios/AdNetworks/MoPubSDK/MoPub.m" />
+		<header-file src="src/ios/AdNetworks/MoPubSDK/MoPub-Bridging-Header.h" />
+		<header-file src="src/ios/AdNetworks/MoPubSDK/MPAdConversionTracker.h" />
+		<source-file src="src/ios/AdNetworks/MoPubSDK/MPAdConversionTracker.m" />
+		<header-file src="src/ios/AdNetworks/MoPubSDK/MPAdView.h" />
+		<source-file src="src/ios/AdNetworks/MoPubSDK/MPAdView.m" />
+		<header-file src="src/ios/AdNetworks/MoPubSDK/MPBannerCustomEvent.h" />
+		<source-file src="src/ios/AdNetworks/MoPubSDK/MPBannerCustomEvent.m" />
+		<header-file src="src/ios/AdNetworks/MoPubSDK/MPBannerCustomEventDelegate.h" />
+		<header-file src="src/ios/AdNetworks/MoPubSDK/MPConstants.h" />
+		<source-file src="src/ios/AdNetworks/MoPubSDK/MPConstants.m" />
+		<header-file src="src/ios/AdNetworks/MoPubSDK/MPInterstitialAdController.h" />
+		<source-file src="src/ios/AdNetworks/MoPubSDK/MPInterstitialAdController.m" />
+		<header-file src="src/ios/AdNetworks/MoPubSDK/MPInterstitialCustomEvent.h" />
+		<source-file src="src/ios/AdNetworks/MoPubSDK/MPInterstitialCustomEvent.m" />
+		<header-file src="src/ios/AdNetworks/MoPubSDK/MPInterstitialCustomEventDelegate.h" />
+		<header-file src="src/ios/AdNetworks/MoPubSDK/Internal/MPCoreInstanceProvider.h" />
+		<source-file src="src/ios/AdNetworks/MoPubSDK/Internal/MPCoreInstanceProvider.m" />
+		<source-file src="src/ios/AdNetworks/MoPubSDK/Internal/MPInstanceProvider.h" />
+		<source-file src="src/ios/AdNetworks/MoPubSDK/Internal/MPInstanceProvider.m" />
+		<header-file src="src/ios/AdNetworks/MoPubSDK/Internal/Banners/MPBannerAdManager.h" />
+		<source-file src="src/ios/AdNetworks/MoPubSDK/Internal/Banners/MPBannerAdManager.m" />
+		<header-file src="src/ios/AdNetworks/MoPubSDK/Internal/Banners/MPBannerAdManagerDelegate.h" />
+		<header-file src="src/ios/AdNetworks/MoPubSDK/Internal/Banners/MPBannerCustomEventAdapter.h" />
+		<source-file src="src/ios/AdNetworks/MoPubSDK/Internal/Banners/MPBannerCustomEventAdapter.m" />
+		<header-file src="src/ios/AdNetworks/MoPubSDK/Internal/Banners/MPBaseBannerAdapter.h" />
+		<source-file src="src/ios/AdNetworks/MoPubSDK/Internal/Banners/MPBaseBannerAdapter.m" />
+		<header-file src="src/ios/AdNetworks/MoPubSDK/Internal/Banners/MPLegacyBannerCustomEventAdapter.h" />
+		<source-file src="src/ios/AdNetworks/MoPubSDK/Internal/Banners/MPLegacyBannerCustomEventAdapter.m" />
+		<header-file src="src/ios/AdNetworks/MoPubSDK/Internal/Banners/MPPrivateBannerCustomEventDelegate.h" />
+		<header-file src="src/ios/AdNetworks/MoPubSDK/Internal/Common/MPActivityViewControllerHelper.h" />
+		<source-file src="src/ios/AdNetworks/MoPubSDK/Internal/Common/MPActivityViewControllerHelper.m" />
+		<header-file src="src/ios/AdNetworks/MoPubSDK/Internal/Common/MPActivityViewControllerHelper+TweetShare.h" />
+		<source-file src="src/ios/AdNetworks/MoPubSDK/Internal/Common/MPActivityViewControllerHelper+TweetShare.m" />
+		<header-file src="src/ios/AdNetworks/MoPubSDK/Internal/Common/MPAdBrowserController.h" />
+		<source-file src="src/ios/AdNetworks/MoPubSDK/Internal/Common/MPAdBrowserController.m" />
+		<resource-file src="src/ios/AdNetworks/MoPubSDK/Internal/Common/MPAdBrowserController.xib" />
+		<header-file src="src/ios/AdNetworks/MoPubSDK/Internal/Common/MPAdConfiguration.h" />
+		<source-file src="src/ios/AdNetworks/MoPubSDK/Internal/Common/MPAdConfiguration.m" />
+		<header-file src="src/ios/AdNetworks/MoPubSDK/Internal/Common/MPAdDestinationDisplayAgent.h" />
+		<source-file src="src/ios/AdNetworks/MoPubSDK/Internal/Common/MPAdDestinationDisplayAgent.m" />
+		<header-file src="src/ios/AdNetworks/MoPubSDK/Internal/Common/MPAdServerCommunicator.h" />
+		<source-file src="src/ios/AdNetworks/MoPubSDK/Internal/Common/MPAdServerCommunicator.m" />
+		<header-file src="src/ios/AdNetworks/MoPubSDK/Internal/Common/MPAdServerURLBuilder.h" />
+		<source-file src="src/ios/AdNetworks/MoPubSDK/Internal/Common/MPAdServerURLBuilder.m" />
+		<header-file src="src/ios/AdNetworks/MoPubSDK/Internal/Common/MPAPIEndpoints.h" />
+		<source-file src="src/ios/AdNetworks/MoPubSDK/Internal/Common/MPAPIEndpoints.m" />
+		<header-file src="src/ios/AdNetworks/MoPubSDK/Internal/Common/MPClosableView.h" />
+		<source-file src="src/ios/AdNetworks/MoPubSDK/Internal/Common/MPClosableView.m" />
+		<header-file src="src/ios/AdNetworks/MoPubSDK/Internal/Common/MPFacebookKeywordProvider.h" />
+		<source-file src="src/ios/AdNetworks/MoPubSDK/Internal/Common/MPFacebookKeywordProvider.m" />
+		<header-file src="src/ios/AdNetworks/MoPubSDK/Internal/Common/MPKeywordProvider.h" />
+		<header-file src="src/ios/AdNetworks/MoPubSDK/Internal/Common/MPLastResortDelegate.h" />
+		<source-file src="src/ios/AdNetworks/MoPubSDK/Internal/Common/MPLastResortDelegate.m" />
+		<header-file src="src/ios/AdNetworks/MoPubSDK/Internal/Common/MPLastResortDelegate+EventKit.h" />
+		<source-file src="src/ios/AdNetworks/MoPubSDK/Internal/Common/MPLastResortDelegate+EventKit.m" />
+		<header-file src="src/ios/AdNetworks/MoPubSDK/Internal/Common/MPProgressOverlayView.h" />
+		<source-file src="src/ios/AdNetworks/MoPubSDK/Internal/Common/MPProgressOverlayView.m" />
+		<header-file src="src/ios/AdNetworks/MoPubSDK/Internal/Common/MPURLResolver.h" />
+		<source-file src="src/ios/AdNetworks/MoPubSDK/Internal/Common/MPURLResolver.m" />
+		<header-file src="src/ios/AdNetworks/MoPubSDK/Internal/Common/AdAlerts/MPAdAlertGestureRecognizer.h" />
+		<source-file src="src/ios/AdNetworks/MoPubSDK/Internal/Common/AdAlerts/MPAdAlertGestureRecognizer.m" />
+		<header-file src="src/ios/AdNetworks/MoPubSDK/Internal/Common/AdAlerts/MPAdAlertManager.h" />
+		<source-file src="src/ios/AdNetworks/MoPubSDK/Internal/Common/AdAlerts/MPAdAlertManager.m" />
+		<header-file src="src/ios/AdNetworks/MoPubSDK/Internal/Event Logging/MPLogEvent.h" />
+		<source-file src="src/ios/AdNetworks/MoPubSDK/Internal/Event Logging/MPLogEvent.m" />
+		<header-file src="src/ios/AdNetworks/MoPubSDK/Internal/Event Logging/MPLogEventCommunicator.h" />
+		<source-file src="src/ios/AdNetworks/MoPubSDK/Internal/Event Logging/MPLogEventCommunicator.m" />
+		<header-file src="src/ios/AdNetworks/MoPubSDK/Internal/Event Logging/MPLogEventRecorder.h" />
+		<source-file src="src/ios/AdNetworks/MoPubSDK/Internal/Event Logging/MPLogEventRecorder.m" />
+		<header-file src="src/ios/AdNetworks/MoPubSDK/Internal/Event Logging/MPNetworkManager.h" />
+		<source-file src="src/ios/AdNetworks/MoPubSDK/Internal/Event Logging/MPNetworkManager.m" />
+		<header-file src="src/ios/AdNetworks/MoPubSDK/Internal/Event Logging/MPQRunLoopOperation.h" />
+		<source-file src="src/ios/AdNetworks/MoPubSDK/Internal/Event Logging/MPQRunLoopOperation.m" />
+		<header-file src="src/ios/AdNetworks/MoPubSDK/Internal/Event Logging/MPRetryingHTTPOperation.h" />
+		<source-file src="src/ios/AdNetworks/MoPubSDK/Internal/Event Logging/MPRetryingHTTPOperation.m" />
+		<header-file src="src/ios/AdNetworks/MoPubSDK/Internal/HTML/MPAdWebView.h" />
+		<source-file src="src/ios/AdNetworks/MoPubSDK/Internal/HTML/MPAdWebView.m" />
+		<header-file src="src/ios/AdNetworks/MoPubSDK/Internal/HTML/MPAdWebViewAgent.h" />
+		<source-file src="src/ios/AdNetworks/MoPubSDK/Internal/HTML/MPAdWebViewAgent.m" />
+		<header-file src="src/ios/AdNetworks/MoPubSDK/Internal/HTML/MPHTMLBannerCustomEvent.h" />
+		<source-file src="src/ios/AdNetworks/MoPubSDK/Internal/HTML/MPHTMLBannerCustomEvent.m" />
+		<header-file src="src/ios/AdNetworks/MoPubSDK/Internal/HTML/MPHTMLInterstitialCustomEvent.h" />
+		<source-file src="src/ios/AdNetworks/MoPubSDK/Internal/HTML/MPHTMLInterstitialCustomEvent.m" />
+		<header-file src="src/ios/AdNetworks/MoPubSDK/Internal/HTML/MPHTMLInterstitialViewController.h" />
+		<source-file src="src/ios/AdNetworks/MoPubSDK/Internal/HTML/MPHTMLInterstitialViewController.m" />
+		<header-file src="src/ios/AdNetworks/MoPubSDK/Internal/Interstitials/MPBaseInterstitialAdapter.h" />
+		<source-file src="src/ios/AdNetworks/MoPubSDK/Internal/Interstitials/MPBaseInterstitialAdapter.m" />
+		<header-file src="src/ios/AdNetworks/MoPubSDK/Internal/Interstitials/MPInterstitialAdManager.h" />
+		<source-file src="src/ios/AdNetworks/MoPubSDK/Internal/Interstitials/MPInterstitialAdManager.m" />
+		<header-file src="src/ios/AdNetworks/MoPubSDK/Internal/Interstitials/MPInterstitialAdManagerDelegate.h" />
+		<header-file src="src/ios/AdNetworks/MoPubSDK/Internal/Interstitials/MPInterstitialCustomEventAdapter.h" />
+		<source-file src="src/ios/AdNetworks/MoPubSDK/Internal/Interstitials/MPInterstitialCustomEventAdapter.m" />
+		<header-file src="src/ios/AdNetworks/MoPubSDK/Internal/Interstitials/MPInterstitialViewController.h" />
+		<source-file src="src/ios/AdNetworks/MoPubSDK/Internal/Interstitials/MPInterstitialViewController.m" />
+		<header-file src="src/ios/AdNetworks/MoPubSDK/Internal/Interstitials/MPLegacyInterstitialCustomEventAdapter.h" />
+		<source-file src="src/ios/AdNetworks/MoPubSDK/Internal/Interstitials/MPLegacyInterstitialCustomEventAdapter.m" />
+		<header-file src="src/ios/AdNetworks/MoPubSDK/Internal/Interstitials/MPPrivateInterstitialCustomEventDelegate.h" />
+		<header-file src="src/ios/AdNetworks/MoPubSDK/Internal/MRAID/MPForceableOrientationProtocol.h" />
+		<header-file src="src/ios/AdNetworks/MoPubSDK/Internal/MRAID/MPMRAIDBannerCustomEvent.h" />
+		<source-file src="src/ios/AdNetworks/MoPubSDK/Internal/MRAID/MPMRAIDBannerCustomEvent.m" />
+		<header-file src="src/ios/AdNetworks/MoPubSDK/Internal/MRAID/MPMRAIDInterstitialCustomEvent.h" />
+		<source-file src="src/ios/AdNetworks/MoPubSDK/Internal/MRAID/MPMRAIDInterstitialCustomEvent.m" />
+		<header-file src="src/ios/AdNetworks/MoPubSDK/Internal/MRAID/MPMRAIDInterstitialViewController.h" />
+		<source-file src="src/ios/AdNetworks/MoPubSDK/Internal/MRAID/MPMRAIDInterstitialViewController.m" />
+		<header-file src="src/ios/AdNetworks/MoPubSDK/Internal/MRAID/MRBridge.h" />
+		<source-file src="src/ios/AdNetworks/MoPubSDK/Internal/MRAID/MRBridge.m" />
+		<header-file src="src/ios/AdNetworks/MoPubSDK/Internal/MRAID/MRBundleManager.h" />
+		<source-file src="src/ios/AdNetworks/MoPubSDK/Internal/MRAID/MRBundleManager.m" />
+		<header-file src="src/ios/AdNetworks/MoPubSDK/Internal/MRAID/MRCalendarManager.h" />
+		<source-file src="src/ios/AdNetworks/MoPubSDK/Internal/MRAID/MRCalendarManager.m" />
+		<header-file src="src/ios/AdNetworks/MoPubSDK/Internal/MRAID/MRCommand.h" />
+		<source-file src="src/ios/AdNetworks/MoPubSDK/Internal/MRAID/MRCommand.m" />
+		<header-file src="src/ios/AdNetworks/MoPubSDK/Internal/MRAID/MRConstants.h" />
+		<source-file src="src/ios/AdNetworks/MoPubSDK/Internal/MRAID/MRConstants.m" />
+		<header-file src="src/ios/AdNetworks/MoPubSDK/Internal/MRAID/MRController.h" />
+		<source-file src="src/ios/AdNetworks/MoPubSDK/Internal/MRAID/MRController.m" />
+		<header-file src="src/ios/AdNetworks/MoPubSDK/Internal/MRAID/MRError.h" />
+		<source-file src="src/ios/AdNetworks/MoPubSDK/Internal/MRAID/MRError.m" />
+		<header-file src="src/ios/AdNetworks/MoPubSDK/Internal/MRAID/MRExpandModalViewController.h" />
+		<source-file src="src/ios/AdNetworks/MoPubSDK/Internal/MRAID/MRExpandModalViewController.m" />
+		<header-file src="src/ios/AdNetworks/MoPubSDK/Internal/MRAID/MRImageDownloader.h" />
+		<source-file src="src/ios/AdNetworks/MoPubSDK/Internal/MRAID/MRImageDownloader.m" />
+		<header-file src="src/ios/AdNetworks/MoPubSDK/Internal/MRAID/MRNativeCommandHandler.h" />
+		<source-file src="src/ios/AdNetworks/MoPubSDK/Internal/MRAID/MRNativeCommandHandler.m" />
+		<header-file src="src/ios/AdNetworks/MoPubSDK/Internal/MRAID/MRPictureManager.h" />
+		<source-file src="src/ios/AdNetworks/MoPubSDK/Internal/MRAID/MRPictureManager.m" />
+		<header-file src="src/ios/AdNetworks/MoPubSDK/Internal/MRAID/MRProperty.h" />
+		<source-file src="src/ios/AdNetworks/MoPubSDK/Internal/MRAID/MRProperty.m" />
+		<header-file src="src/ios/AdNetworks/MoPubSDK/Internal/MRAID/MRVideoPlayerManager.h" />
+		<source-file src="src/ios/AdNetworks/MoPubSDK/Internal/MRAID/MRVideoPlayerManager.m" />
+		<header-file src="src/ios/AdNetworks/MoPubSDK/Internal/Utility/MPAnalyticsTracker.h" />
+		<source-file src="src/ios/AdNetworks/MoPubSDK/Internal/Utility/MPAnalyticsTracker.m" />
+		<header-file src="src/ios/AdNetworks/MoPubSDK/Internal/Utility/MPError.h" />
+		<source-file src="src/ios/AdNetworks/MoPubSDK/Internal/Utility/MPError.m" />
+		<header-file src="src/ios/AdNetworks/MoPubSDK/Internal/Utility/MPGeolocationProvider.h" />
+		<source-file src="src/ios/AdNetworks/MoPubSDK/Internal/Utility/MPGeolocationProvider.m" />
+		<header-file src="src/ios/AdNetworks/MoPubSDK/Internal/Utility/MPGlobal.h" />
+		<source-file src="src/ios/AdNetworks/MoPubSDK/Internal/Utility/MPGlobal.m" />
+		<header-file src="src/ios/AdNetworks/MoPubSDK/Internal/Utility/MPIdentityProvider.h" />
+		<source-file src="src/ios/AdNetworks/MoPubSDK/Internal/Utility/MPIdentityProvider.m" />
+		<header-file src="src/ios/AdNetworks/MoPubSDK/Internal/Utility/MPInternalUtils.h" />
+		<source-file src="src/ios/AdNetworks/MoPubSDK/Internal/Utility/MPInternalUtils.m" />
+		<header-file src="src/ios/AdNetworks/MoPubSDK/Internal/Utility/MPLogging.h" />
+		<source-file src="src/ios/AdNetworks/MoPubSDK/Internal/Utility/MPLogging.m" />
+		<header-file src="src/ios/AdNetworks/MoPubSDK/Internal/Utility/MPLogProvider.h" />
+		<source-file src="src/ios/AdNetworks/MoPubSDK/Internal/Utility/MPLogProvider.m" />
+		<header-file src="src/ios/AdNetworks/MoPubSDK/Internal/Utility/MPReachability.h" />
+		<source-file src="src/ios/AdNetworks/MoPubSDK/Internal/Utility/MPReachability.m" />
+		<header-file src="src/ios/AdNetworks/MoPubSDK/Internal/Utility/MPSessionTracker.h" />
+		<source-file src="src/ios/AdNetworks/MoPubSDK/Internal/Utility/MPSessionTracker.m" />
+		<header-file src="src/ios/AdNetworks/MoPubSDK/Internal/Utility/MPStoreKitProvider.h" />
+		<source-file src="src/ios/AdNetworks/MoPubSDK/Internal/Utility/MPStoreKitProvider.m" />
+		<header-file src="src/ios/AdNetworks/MoPubSDK/Internal/Utility/MPTimer.h" />
+		<source-file src="src/ios/AdNetworks/MoPubSDK/Internal/Utility/MPTimer.m" />
+		<header-file src="src/ios/AdNetworks/MoPubSDK/Internal/Utility/MPUserInteractionGestureRecognizer.h" />
+		<source-file src="src/ios/AdNetworks/MoPubSDK/Internal/Utility/MPUserInteractionGestureRecognizer.m" />
+		<header-file src="src/ios/AdNetworks/MoPubSDK/Internal/Utility/Categories/NSHTTPURLResponse+MPAdditions.h" />
+		<source-file src="src/ios/AdNetworks/MoPubSDK/Internal/Utility/Categories/NSHTTPURLResponse+MPAdditions.m" />
+		<header-file src="src/ios/AdNetworks/MoPubSDK/Internal/Utility/Categories/NSJSONSerialization+MPAdditions.h" />
+		<source-file src="src/ios/AdNetworks/MoPubSDK/Internal/Utility/Categories/NSJSONSerialization+MPAdditions.m" />
+		<header-file src="src/ios/AdNetworks/MoPubSDK/Internal/Utility/Categories/NSURL+MPAdditions.h" />
+		<source-file src="src/ios/AdNetworks/MoPubSDK/Internal/Utility/Categories/NSURL+MPAdditions.m" />
+		<header-file src="src/ios/AdNetworks/MoPubSDK/Internal/Utility/Categories/UIViewController+MPAdditions.h" />
+		<source-file src="src/ios/AdNetworks/MoPubSDK/Internal/Utility/Categories/UIViewController+MPAdditions.m" />
+		<header-file src="src/ios/AdNetworks/MoPubSDK/Internal/Utility/Categories/UIWebView+MPAdditions.h" />
+		<source-file src="src/ios/AdNetworks/MoPubSDK/Internal/Utility/Categories/UIWebView+MPAdditions.m" />
+		<header-file src="src/ios/AdNetworks/MoPubSDK/Native Ads/MPAdPositioning.h" />
+		<source-file src="src/ios/AdNetworks/MoPubSDK/Native Ads/MPAdPositioning.m" />
+		<header-file src="src/ios/AdNetworks/MoPubSDK/Native Ads/MPClientAdPositioning.h" />
+		<source-file src="src/ios/AdNetworks/MoPubSDK/Native Ads/MPClientAdPositioning.m" />
+		<header-file src="src/ios/AdNetworks/MoPubSDK/Native Ads/MPCollectionViewAdPlacer.h" />
+		<source-file src="src/ios/AdNetworks/MoPubSDK/Native Ads/MPCollectionViewAdPlacer.m" />
+		<header-file src="src/ios/AdNetworks/MoPubSDK/Native Ads/MPNativeAd.h" />
+		<source-file src="src/ios/AdNetworks/MoPubSDK/Native Ads/MPNativeAd.m" />
+		<header-file src="src/ios/AdNetworks/MoPubSDK/Native Ads/MPNativeAdAdapter.h" />
+		<header-file src="src/ios/AdNetworks/MoPubSDK/Native Ads/MPNativeAdConstants.h" />
+		<source-file src="src/ios/AdNetworks/MoPubSDK/Native Ads/MPNativeAdConstants.m" />
+		<header-file src="src/ios/AdNetworks/MoPubSDK/Native Ads/MPNativeAdData.h" />
+		<source-file src="src/ios/AdNetworks/MoPubSDK/Native Ads/MPNativeAdData.m" />
+		<header-file src="src/ios/AdNetworks/MoPubSDK/Native Ads/MPNativeAdDelegate.h" />
+		<header-file src="src/ios/AdNetworks/MoPubSDK/Native Ads/MPNativeAdError.h" />
+		<source-file src="src/ios/AdNetworks/MoPubSDK/Native Ads/MPNativeAdError.m" />
+		<header-file src="src/ios/AdNetworks/MoPubSDK/Native Ads/MPNativeAdRendering.h" />
+		<header-file src="src/ios/AdNetworks/MoPubSDK/Native Ads/MPNativeAdRequest.h" />
+		<source-file src="src/ios/AdNetworks/MoPubSDK/Native Ads/MPNativeAdRequest.m" />
+		<header-file src="src/ios/AdNetworks/MoPubSDK/Native Ads/MPNativeAdRequestTargeting.h" />
+		<source-file src="src/ios/AdNetworks/MoPubSDK/Native Ads/MPNativeAdRequestTargeting.m" />
+		<header-file src="src/ios/AdNetworks/MoPubSDK/Native Ads/MPNativeAdSource.h" />
+		<source-file src="src/ios/AdNetworks/MoPubSDK/Native Ads/MPNativeAdSource.m" />
+		<header-file src="src/ios/AdNetworks/MoPubSDK/Native Ads/MPNativeAdSourceDelegate.h" />
+		<header-file src="src/ios/AdNetworks/MoPubSDK/Native Ads/MPNativeCustomEvent.h" />
+		<source-file src="src/ios/AdNetworks/MoPubSDK/Native Ads/MPNativeCustomEvent.m" />
+		<header-file src="src/ios/AdNetworks/MoPubSDK/Native Ads/MPNativeCustomEventDelegate.h" />
+		<header-file src="src/ios/AdNetworks/MoPubSDK/Native Ads/MPServerAdPositioning.h" />
+		<source-file src="src/ios/AdNetworks/MoPubSDK/Native Ads/MPServerAdPositioning.m" />
+		<header-file src="src/ios/AdNetworks/MoPubSDK/Native Ads/MPStreamAdPlacementData.h" />
+		<source-file src="src/ios/AdNetworks/MoPubSDK/Native Ads/MPStreamAdPlacementData.m" />
+		<header-file src="src/ios/AdNetworks/MoPubSDK/Native Ads/MPStreamAdPlacer.h" />
+		<source-file src="src/ios/AdNetworks/MoPubSDK/Native Ads/MPStreamAdPlacer.m" />
+		<header-file src="src/ios/AdNetworks/MoPubSDK/Native Ads/MPTableViewAdManager.h" />
+		<source-file src="src/ios/AdNetworks/MoPubSDK/Native Ads/MPTableViewAdManager.m" />
+		<header-file src="src/ios/AdNetworks/MoPubSDK/Native Ads/MPTableViewAdPlacer.h" />
+		<source-file src="src/ios/AdNetworks/MoPubSDK/Native Ads/MPTableViewAdPlacer.m" />
+		<header-file src="src/ios/AdNetworks/MoPubSDK/Native Ads/Internal/MPAdPlacerInvocation.h" />
+		<source-file src="src/ios/AdNetworks/MoPubSDK/Native Ads/Internal/MPAdPlacerInvocation.m" />
+		<header-file src="src/ios/AdNetworks/MoPubSDK/Native Ads/Internal/MPDiskLRUCache.h" />
+		<source-file src="src/ios/AdNetworks/MoPubSDK/Native Ads/Internal/MPDiskLRUCache.m" />
+		<header-file src="src/ios/AdNetworks/MoPubSDK/Native Ads/Internal/MPImageDownloadQueue.h" />
+		<source-file src="src/ios/AdNetworks/MoPubSDK/Native Ads/Internal/MPImageDownloadQueue.m" />
+		<header-file src="src/ios/AdNetworks/MoPubSDK/Native Ads/Internal/MPMoPubNativeAdAdapter.h" />
+		<source-file src="src/ios/AdNetworks/MoPubSDK/Native Ads/Internal/MPMoPubNativeAdAdapter.m" />
+		<header-file src="src/ios/AdNetworks/MoPubSDK/Native Ads/Internal/MPMoPubNativeCustomEvent.h" />
+		<source-file src="src/ios/AdNetworks/MoPubSDK/Native Ads/Internal/MPMoPubNativeCustomEvent.m" />
+		<header-file src="src/ios/AdNetworks/MoPubSDK/Native Ads/Internal/MPNativeAd+Internal.h" />
+		<header-file src="src/ios/AdNetworks/MoPubSDK/Native Ads/Internal/MPNativeAdSourceQueue.h" />
+		<source-file src="src/ios/AdNetworks/MoPubSDK/Native Ads/Internal/MPNativeAdSourceQueue.m" />
+		<header-file src="src/ios/AdNetworks/MoPubSDK/Native Ads/Internal/MPNativeAdUtils.h" />
+		<source-file src="src/ios/AdNetworks/MoPubSDK/Native Ads/Internal/MPNativeAdUtils.m" />
+		<header-file src="src/ios/AdNetworks/MoPubSDK/Native Ads/Internal/MPNativeCache.h" />
+		<source-file src="src/ios/AdNetworks/MoPubSDK/Native Ads/Internal/MPNativeCache.m" />
+		<header-file src="src/ios/AdNetworks/MoPubSDK/Native Ads/Internal/MPNativePositionResponseDeserializer.h" />
+		<source-file src="src/ios/AdNetworks/MoPubSDK/Native Ads/Internal/MPNativePositionResponseDeserializer.m" />
+		<header-file src="src/ios/AdNetworks/MoPubSDK/Native Ads/Internal/MPNativePositionSource.h" />
+		<source-file src="src/ios/AdNetworks/MoPubSDK/Native Ads/Internal/MPNativePositionSource.m" />
+		<header-file src="src/ios/AdNetworks/MoPubSDK/Native Ads/Internal/MPTableViewCellImpressionTracker.h" />
+		<source-file src="src/ios/AdNetworks/MoPubSDK/Native Ads/Internal/MPTableViewCellImpressionTracker.m" />
+		<header-file src="src/ios/AdNetworks/MoPubSDK/Native Ads/Internal/Categories/MPNativeAdRequest+MPNativeAdSource.h" />
+		<header-file src="src/ios/AdNetworks/MoPubSDK/Native Ads/Internal/Categories/UIView+MPNativeAd.h" />
+		<source-file src="src/ios/AdNetworks/MoPubSDK/Native Ads/Internal/Categories/UIView+MPNativeAd.m" />
+		<header-file src="src/ios/AdNetworks/MoPubSDK/RewardedVideo/MPMediationSettingsProtocol.h" />
+		<header-file src="src/ios/AdNetworks/MoPubSDK/RewardedVideo/MPRewardedVideo.h" />
+		<source-file src="src/ios/AdNetworks/MoPubSDK/RewardedVideo/MPRewardedVideo.m" />
+		<header-file src="src/ios/AdNetworks/MoPubSDK/RewardedVideo/MPRewardedVideoCustomEvent.h" />
+		<source-file src="src/ios/AdNetworks/MoPubSDK/RewardedVideo/MPRewardedVideoCustomEvent.m" />
+		<header-file src="src/ios/AdNetworks/MoPubSDK/RewardedVideo/MPRewardedVideoError.h" />
+		<source-file src="src/ios/AdNetworks/MoPubSDK/RewardedVideo/MPRewardedVideoError.m" />
+		<header-file src="src/ios/AdNetworks/MoPubSDK/RewardedVideo/MPRewardedVideoReward.h" />
+		<source-file src="src/ios/AdNetworks/MoPubSDK/RewardedVideo/MPRewardedVideoReward.m" />
+		<header-file src="src/ios/AdNetworks/MoPubSDK/RewardedVideo/Internal/MPRewardedVideoAdapter.h" />
+		<source-file src="src/ios/AdNetworks/MoPubSDK/RewardedVideo/Internal/MPRewardedVideoAdapter.m" />
+		<header-file src="src/ios/AdNetworks/MoPubSDK/RewardedVideo/Internal/MPRewardedVideoAdManager.h" />
+		<source-file src="src/ios/AdNetworks/MoPubSDK/RewardedVideo/Internal/MPRewardedVideoAdManager.m" />
+		<resource-file src="src/ios/AdNetworks/MoPubSDK/Resources/MRAID.bundle" />
+		<resource-file src="src/ios/AdNetworks/MoPubSDK/Resources/MPCloseButtonX.png" />
+		<resource-file src="src/ios/AdNetworks/MoPubSDK/Resources/MPCloseButtonX@2x.png" />
+		<resource-file src="src/ios/AdNetworks/MoPubSDK/Resources/MPCloseButtonX@3x.png" />
+<!--		
+        <framework src="src/ios/AdNetworks/MoPub.framework" custom="true"/>
+        <resource-file src="src/ios/AdNetworks/MoPub.framework/Resources/MPCloseButtonX.png"/>
+        <resource-file src="src/ios/AdNetworks/MoPub.framework/Resources/MPCloseButtonX@2x.png"/>
+        <resource-file src="src/ios/AdNetworks/MoPub.framework/Resources/MRAID.bundle"/>
+-->		
+        <framework src="src/ios/AdNetworks/UnityAds.framework" custom="true" />
+        <resource-file src="src/ios/AdNetworks/UnityAds.bundle" />
+        <!--framework src="src/ios/AdNetworks/VungleSDK.embeddedframework" custom="true" /--><!--build error-->
+        <!--framework src="src/ios/AdNetworks/VungleSDK" custom="true" /--><!--build error-->
+		<framework src="src/ios/AdNetworks/VungleSDK/VungleSDK.framework" custom="true" />
+		<resource-file src="src/ios/AdNetworks/VungleSDK/Resources/__vungle.db"/>
+		<resource-file src="src/ios/AdNetworks/VungleSDK/Resources/vg_close.png"/>
+		<resource-file src="src/ios/AdNetworks/VungleSDK/Resources/vg_cta.png"/>
+		<resource-file src="src/ios/AdNetworks/VungleSDK/Resources/vg_mute_off.png"/>
+		<resource-file src="src/ios/AdNetworks/VungleSDK/Resources/vg_mute_on.png"/>
+		<resource-file src="src/ios/AdNetworks/VungleSDK/Resources/vg_timer.png"/>
         <framework src="AdSupport.framework" />
         <framework src="AVFoundation.framework" />
         <framework src="AudioToolbox.framework" />

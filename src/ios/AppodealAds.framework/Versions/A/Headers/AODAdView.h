@@ -51,17 +51,41 @@ typedef enum _aodBannerType {
 - (void)refreshAd;
 - (void)forceRefreshAd;
 - (CGSize)adContentViewSize;
+- (void)hide;
+- (void)show;
+- (void)destroy;
+- (void)orientationChange:(UIInterfaceOrientation)newOrientation;
 
 /*!
  @abstract
  Disable ad network for banner ads
  
  @param adName You can disable following ad network: admob, smaato, amazon_ads, applovin, appnexus, mopub, mraid, nexage, openx, tapsense.
- @discussion This method must be executed after Appodeal intialization.
+ @discussion This method must be executed after Appodeal initialization.
  */
 - (void)disableAdBannerNetwork:(NSString*)adName;
+/*!
+ @abstract
+ Disable banner auto refresh
+ 
+ @discussion This method must be executed after Appodeal initialization.
+ */
 - (void)disableAutoRefresh;
+
+/*!
+ @abstract
+ Set auto auto cache
+ 
+ @param autoCache You can disable auto cache banners from servers.
+ @discussion This method must be executed after Appodeal initialization.
+ */
 - (void)setAutoCache:(BOOL)autoCache;
+/*!
+ @abstract
+ Check banner load
+ 
+ @discussion This method must be executed after Appodeal initialization.
+ */
 - (BOOL)isLoaded;
 
 @end

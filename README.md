@@ -7,23 +7,23 @@ show appodeal banner ad, full screen ad and rewarded video ad.
 
 requires appodeal account http://appodeal.com/+6ba27c77d92d2eb5cdbb47ee677b1c83
 
-[Appodeal android SDK 1.12.2]
-appodeal-1.12.2.jar
-applovin-sdk-5.4.3.jar
-chartboost-5.2.0.jar
-supersonic-sdk-5.14.jar
-unity-ads-1.3.12.jar
+[Appodeal android SDK 1.12.2]<br>
+appodeal-1.12.2.jar<br>
+applovin-sdk-5.4.3.jar<br>
+chartboost-5.2.0.jar<br>
+supersonic-sdk-5.14.jar<br>
+unity-ads-1.3.12.jar<br>
 
-[Appodeal ios SDK 0.2.3]
-AdColony.framework
-AerServSDK.framework
-AmazonAd.framework
-AppodealAds.framework (0.2.3)
-Applovin 2.5.4 (need to check)
-Chartboost.framework (5.1.3)
-GoogleMobileAds.framework (7.2.2)
-MoPub.framework (3.5.0)
-UnityAds.framework
+[Appodeal ios SDK 0.2.3]<br>
+AdColony.framework<br>
+AerServSDK.framework<br>
+AmazonAd.framework<br>
+AppodealAds.framework (0.2.3)<br>
+Applovin 2.5.4 (need to check)<br>
+Chartboost.framework (5.1.3)<br>
+GoogleMobileAds.framework (7.2.2)<br>
+MoPub.framework (3.5.0)<br>
+UnityAds.framework<br>
 VungleSDK (replace original with vungle 3.0.11 by cranberrygame because of xdk ios duplicate symbol build issue)
 
 This is open source cordova plugin.

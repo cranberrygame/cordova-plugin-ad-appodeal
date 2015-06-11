@@ -122,6 +122,8 @@
 + (void)cacheInterstitial;
 + (void)setInterstitialDelegate:(id<AODInterstitialDelegate>) delegate;
 + (void)setInterstitialAutoCache:(BOOL)autoCache;
++ (void)setOnInterstitialLoadedTriggerBoth:(BOOL)onLoadedTriggerBoth;
++ (void)showInterstitialWithPriceFloor:(UIViewController*)rootController;
 
 // for AdBanner
 + (BOOL)isAdBannerLoaded;
@@ -142,6 +144,14 @@
  @discussion This method must be executed after Appodeal intialization.
  */
 + (void)disableVideoAdNetwork:(NSString*)adName;
+
+/*!
+ @abstract
+ Get ads networks list
+
+ @discussion This method must be executed after Appodeal intialization.
+ */
++ (NSArray*)getNetworks;
 
 /*!
  @abstract
