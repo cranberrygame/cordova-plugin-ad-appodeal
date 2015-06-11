@@ -7,14 +7,14 @@ show appodeal banner ad, full screen ad and rewarded video ad.
 
 requires appodeal account http://appodeal.com/+6ba27c77d92d2eb5cdbb47ee677b1c83
 
-<Appodeal android SDK 1.12.2>
+[Appodeal android SDK 1.12.2]
 appodeal-1.12.2.jar
 applovin-sdk-5.4.3.jar
 chartboost-5.2.0.jar
 supersonic-sdk-5.14.jar
 unity-ads-1.3.12.jar
 
-<Appodeal ios SDK 0.2.3>
+[Appodeal ios SDK 0.2.3]
 AdColony.framework
 AerServSDK.framework
 AmazonAd.framework
@@ -40,9 +40,9 @@ To-Do:
 # Install plugin #
 
 ## Cordova cli ##
-https://cordova.apache.org/docs/en/edge/guide_cli_index.md.html#The%20Command-Line%20Interface - npm install -g cordova@4.1.2
+https://cordova.apache.org/docs/en/edge/guide_cli_index.md.html#The%20Command-Line%20Interface - npm install -g cordova@5.0.0
 ```c
-cordova plugin add com.cranberrygame.cordova.plugin.ad.appodeal
+cordova plugin add cordova-plugin-ad-appodeal
 ```
 
 ## Xdk ##
@@ -59,7 +59,7 @@ https://cocoon.io - Create project - [specific project] - Setting - Plugins - Cu
 ## Phonegap build service (config.xml) ##
 https://build.phonegap.com/ - Apps - [specific project] - Update code - Zip file including config.xml
 ```c
-<gap:plugin name="com.cranberrygame.cordova.plugin.ad.appodeal" source="plugins.cordova.io" />
+<gap:plugin name="cordova-plugin-ad-appodeal" source="npm" />
 ```
 
 ## Construct2 ##
@@ -70,7 +70,7 @@ Now all the native plugins are installed automatically: https://plus.google.com/
 ```c
 ```
 
-<img src="https://github.com/cranberrygame/cordova-plugin-ad-appodeal/blob/master/doc/applicationKey.png">
+<img src="https://raw.githubusercontent.com/cranberrygame/cordova-plugin-ad-appodeal/master/doc/applicationKey.png">
 
 # API #
 ```javascript
