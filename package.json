@@ -1,6 +1,6 @@
 {
   "name": "cordova-plugin-ad-appodeal",
-  "version": "1.0.37",
+  "version": "1.0.43",
   "description": "Show appodeal banner ad, full screen ad and rewarded video ad.",
   "cordova": {
     "id": "cordova-plugin-ad-appodeal",
