@@ -331,7 +331,6 @@ public class AppodealPlugin extends CordovaPlugin {
 		this.email = email;
 		this.licenseKey = licenseKey;
 
-/*		
 		//
 		String str1 = Util.md5("cordova-plugin-: " + email);
 		String str2 = Util.md5("cordova-plugin-ad-appodeal: " + email);
@@ -358,8 +357,6 @@ public class AppodealPlugin extends CordovaPlugin {
 		}		
 		//if (!this.validLicenseKey)
 		//	Util.alert(cordova.getActivity(),"Cordova Appodeal: invalid email / license key. You can get free license key from https://play.google.com/store/apps/details?id=com.cranberrygame.pluginsforcordova");
-*/
-		this.validLicenseKey = true;
 	}
 	
 	private void _setUp(String applicationKey, boolean isOverlap, boolean isTest) {
