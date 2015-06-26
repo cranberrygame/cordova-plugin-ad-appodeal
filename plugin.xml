@@ -2,7 +2,7 @@
 
 <plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
            id="cordova-plugin-ad-appodeal"
-      version="1.0.43">
+      version="1.0.46">
 	  
     <name>Cordova Appodeal plugin</name>
     <description>Show appodeal banner ad, full screen ad and rewarded video ad.</description>
@@ -46,10 +46,6 @@
 				android:configChanges="orientation|screenSize"
 				android:theme="@android:style/Theme.Translucent.NoTitleBar" />
 
-			<activity android:name="com.google.android.gms.ads.AdActivity"
-				android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
-				android:theme="@android:style/Theme.Translucent" />
-
 			<activity android:name="com.chartboost.sdk.CBImpressionActivity"
 				android:theme="@android:style/Theme.Translucent"
 				android:excludeFromRecents="true" />
@@ -73,7 +69,6 @@
 
 			<activity android:name="com.amazon.device.ads.AdActivity" android:configChanges="keyboardHidden|orientation|screenSize"/>
 
-
 			<activity android:name="com.unity3d.ads.android.view.UnityAdsFullscreenActivity"
 				android:configChanges="fontScale|keyboard|keyboardHidden|locale|mnc|mcc|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode|touchscreen"
 				android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
@@ -91,15 +86,7 @@
 				android:hardwareAccelerated="true"/>
 			
         </config-file>
-        
-		<!-- cranberrygame start: com.google.playservices -->
-<!--		
-		<config-file target="AndroidManifest.xml" parent="/manifest/application">
-			<meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version" />
-		</config-file>
--->		
-		<!-- cranberrygame end -->
-		
+        		
         <source-file src="src/android/AppodealPlugin.java" target-dir="src/com/cranberrygame/cordova/plugin/ad/appodeal" />
 		
         <source-file src="src/android/appodeal-1.12.2.jar" target-dir="libs" />
@@ -109,17 +96,7 @@
 		<source-file src="src/android/supersonic-sdk-5.14.jar" target-dir="libs" />
 		<!--source-file src="src/android/unity-ads-1.3.12.jar" target-dir="libs" /--><!-- build error when complied with unityads plugin -->
 		<dependency id="cordova-plugin-ad-unityads" url="https://github.com/cranberrygame/cordova-plugin-ad-unityads" />
-		<!-- cranberrygame start: com.google.playservices -->
-<!--		
-		<source-file src="src/android/google-play-services.jar" target-dir="libs" />
-		<source-file src="src/android/version.xml" target-dir="res/values" />
--->		
-		<!-- cranberrygame end -->
-		
-<!--
-		<dependency id="com.google.playservices" url="https://github.com/MobileChromeApps/google-play-services" commit="00f511a8ce332d4586f067240460bfe978ace2ae" />
--->		
-		<dependency id="com.google.playservices@21.0.0" />
+		<dependency id="cordova-plugin-ad-admob" url="https://github.com/cranberrygame/cordova-plugin-ad-admob" />
     </platform>
 
 	<!-- ios -->

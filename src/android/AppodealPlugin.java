@@ -98,8 +98,10 @@ public class AppodealPlugin extends CordovaPlugin {
 	protected boolean fullScreenAdPreload;
 	protected boolean rewardedVideoAdPreload;
 	
-    public void initialize(CordovaInterface cordova, CordovaWebView webView) {
-		super.initialize(cordova, webView);
+    @Override
+	public void pluginInitialize() {
+		super.pluginInitialize();
+		//
     }
 	
 	//@Override

@@ -26,6 +26,11 @@ static NSString *TEST_APPLICATION_KEY = @"c2b9d306d7f83752b2e3509f60cb780d81fccf
 //
 @synthesize bannerView;
 
+- (void) pluginInitialize {
+    [super pluginInitialize];    
+    //
+}
+
 - (void) setLicenseKey: (CDVInvokedUrlCommand*)command {
     NSString *email = [command.arguments objectAtIndex: 0];
     NSString *licenseKey = [command.arguments objectAtIndex: 1];

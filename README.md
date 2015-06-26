@@ -3,7 +3,7 @@ Cordova Appodeal plugin
 # Overview #
 show appodeal banner ad, full screen ad and rewarded video ad.
 
-[android, ios] [cordova cli] [xdk]
+[android, ios] [cordova cli] [xdk] [cocoon]
 
 requires appodeal account http://appodeal.com/+6ba27c77d92d2eb5cdbb47ee677b1c83
 
@@ -63,9 +63,8 @@ https://build.phonegap.com/ - Apps - [specific project] - Update code - Zip file
 ```
 
 ## Construct2 ##
-Download construct2 plugin: http://www.paywithapost.de/pay?id=4ef3f2be-26e8-4a04-b826-6680db13a8c8
-<br>
-Now all the native plugins are installed automatically: https://plus.google.com/102658703990850475314/posts/XS5jjEApJYV
+Download construct2 plugin: https://dl.dropboxusercontent.com/u/186681453/pluginsforcordova/index.html
+
 # Server setting #
 ```c
 ```
