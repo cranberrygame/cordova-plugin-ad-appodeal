@@ -2,7 +2,7 @@
 
 <plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
            id="cordova-plugin-ad-appodeal"
-      version="1.0.50">
+      version="1.0.52">
 	  
     <name>Cordova Appodeal plugin</name>
     <description>Show appodeal banner ad, full screen ad and rewarded video ad.</description>
@@ -93,7 +93,8 @@
         		
         <source-file src="src/android/AppodealPlugin.java" target-dir="src/com/cranberrygame/cordova/plugin/ad/appodeal" />
 		
-        <source-file src="src/android/appodeal-1.12.2.jar" target-dir="libs" />
+        <!--source-file src="src/android/appodeal-1.12.2.jar" target-dir="libs" /-->
+        <source-file src="src/android/appodeal-1.12.2_cranberrygame_remove_com_mopub.jar" target-dir="libs" />
 		<source-file src="src/android/applovin-sdk-5.4.3.jar" target-dir="libs" />
 		<!--source-file src="src/android/chartboost-5.2.0.jar" target-dir="libs" /--><!-- build error when complied with chartboost plugin -->
 		<dependency id="cordova-plugin-ad-chartboost" url="https://github.com/cranberrygame/cordova-plugin-ad-chartboost" />
