@@ -2,7 +2,7 @@
 
 <plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
            id="cordova-plugin-ad-appodeal"
-      version="1.0.50">
+      version="1.0.47">
 	  
     <name>Cordova Appodeal plugin</name>
     <description>Show appodeal banner ad, full screen ad and rewarded video ad.</description>
@@ -53,7 +53,6 @@
 			<activity android:name="com.applovin.adview.AppLovinInterstitialActivity"
 				android:theme="@android:style/Theme.Translucent" />
 
-<!--
 			<activity android:name="com.mopub.mobileads.MoPubActivity"
 				android:configChanges="keyboardHidden|orientation|screenSize"
 				android:theme="@android:style/Theme.Translucent" />
@@ -63,7 +62,6 @@
 				android:configChanges="keyboardHidden|orientation|screenSize" />
 			<activity android:name="com.mopub.mobileads.MraidVideoPlayerActivity"
 				android:configChanges="keyboardHidden|orientation|screenSize" />
--->
 
 			<activity android:name="org.nexage.sourcekit.mraid.MRAIDBrowser"
 				android:configChanges="orientation|keyboard|keyboardHidden|screenSize"
@@ -71,13 +69,11 @@
 
 			<activity android:name="com.amazon.device.ads.AdActivity" android:configChanges="keyboardHidden|orientation|screenSize"/>
 
-<!--
 			<activity android:name="com.unity3d.ads.android.view.UnityAdsFullscreenActivity"
 				android:configChanges="fontScale|keyboard|keyboardHidden|locale|mnc|mcc|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode|touchscreen"
 				android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
 				android:hardwareAccelerated="true" />
--->
-
+				
 			<activity android:name="com.supersonicads.sdk.controller.ControllerActivity"
 				android:configChanges="orientation|screenSize"
 				android:hardwareAccelerated="true" />
@@ -101,7 +97,6 @@
 		<!--source-file src="src/android/unity-ads-1.3.12.jar" target-dir="libs" /--><!-- build error when complied with unityads plugin -->
 		<dependency id="cordova-plugin-ad-unityads" url="https://github.com/cranberrygame/cordova-plugin-ad-unityads" />
 		<dependency id="cordova-plugin-ad-admob" url="https://github.com/cranberrygame/cordova-plugin-ad-admob" />
-        <dependency id="cordova-plugin-ad-mopub" url="https://github.com/cranberrygame/cordova-plugin-ad-mopub" />
     </platform>
 
 	<!-- ios -->
@@ -115,39 +110,12 @@
 		<header-file src="src/ios/AppodealPlugin.h" />
 		<source-file src="src/ios/AppodealPlugin.m" />
 		
-        <framework src="AdSupport.framework" />
-        <framework src="AVFoundation.framework" />
-        <framework src="AudioToolbox.framework" />
-        <framework src="CoreTelephony.framework" />
-        <framework src="CoreGraphics.framework" />
-        <framework src="EventKit.framework" />
-        <framework src="EventKitUI.framework" />
-        <framework src="MessageUI.framework" />
-        <framework src="StoreKit.framework" />
-        <framework src="SystemConfiguration.framework" />
-        <framework src="CoreLocation.framework" />
-        <framework src="UIKit.framework" />
-        <framework src="CoreMedia.framework" />
-        <framework src="MediaPlayer.framework" />
-        <framework src="QuartzCore.framework" />
-        <framework src="CoreImage.framework" />
-        <framework src="CoreFoundation.framework" />
-        <framework src="Social.framework" />
-        <framework src="WebKit.framework" />
-        <framework src="CFNetwork.framework" />
-        <framework src="libz.dylib" />
-        <framework src="libsqlite3.dylib" />
-        <framework src="libxml2.dylib" />		
 		<framework src="src/ios/AppodealAds.framework" custom="true" />
-        <!--framework src="src/ios/AdNetworks/AdColony.framework" custom="true" /-->
-		<dependency id="cordova-plugin-ad-adcolony" url="https://github.com/cranberrygame/cordova-plugin-ad-adcolony" />
+        <framework src="src/ios/AdNetworks/AdColony.framework" custom="true" />
         <framework src="src/ios/AdNetworks/AerServSDK.framework" custom="true" />
 		<framework src="src/ios/AdNetworks/AmazonAd.framework" custom="true" />
-		<!--framework src="src/ios/AdNetworks/Chartboost.framework" custom="true" /-->
-		<dependency id="cordova-plugin-ad-chartboost" url="https://github.com/cranberrygame/cordova-plugin-ad-chartboost" />
-        <!--framework src="src/ios/AdNetworks/GoogleMobileAds.framework" custom="true" /-->
-		<dependency id="cordova-plugin-ad-admob" url="https://github.com/cranberrygame/cordova-plugin-ad-admob" />
-<!--
+		<framework src="src/ios/AdNetworks/Chartboost.framework" custom="true" />
+        <framework src="src/ios/AdNetworks/GoogleMobileAds.framework" custom="true" />
 		<header-file src="src/ios/AdNetworks/MoPubSDK/MoPub.h" />
 		<source-file src="src/ios/AdNetworks/MoPubSDK/MoPub.m" />
 		<header-file src="src/ios/AdNetworks/MoPubSDK/MoPub-Bridging-Header.h" />
@@ -396,19 +364,14 @@
 		<resource-file src="src/ios/AdNetworks/MoPubSDK/Resources/MPCloseButtonX.png" />
 		<resource-file src="src/ios/AdNetworks/MoPubSDK/Resources/MPCloseButtonX@2x.png" />
 		<resource-file src="src/ios/AdNetworks/MoPubSDK/Resources/MPCloseButtonX@3x.png" />
--->
 <!--		
         <framework src="src/ios/AdNetworks/MoPub.framework" custom="true"/>
         <resource-file src="src/ios/AdNetworks/MoPub.framework/Resources/MPCloseButtonX.png"/>
         <resource-file src="src/ios/AdNetworks/MoPub.framework/Resources/MPCloseButtonX@2x.png"/>
         <resource-file src="src/ios/AdNetworks/MoPub.framework/Resources/MRAID.bundle"/>
--->
-        <dependency id="cordova-plugin-ad-mopub" url="https://github.com/cranberrygame/cordova-plugin-ad-mopub" />
-<!--
+-->		
         <framework src="src/ios/AdNetworks/UnityAds.framework" custom="true" />
         <resource-file src="src/ios/AdNetworks/UnityAds.bundle" />		
--->		
-		<dependency id="cordova-plugin-ad-unityads" url="https://github.com/cranberrygame/cordova-plugin-ad-unityads" />		
 		<!--framework src="src/ios/AdNetworks/VungleSDK.embeddedframework" custom="true" /--><!--build error-->
 <!--		
 		<framework src="src/ios/AdNetworks/VungleSDK.embeddedframework/VungleSDK.framework" custom="true" />
@@ -419,7 +382,6 @@
 		<resource-file src="src/ios/AdNetworks/VungleSDK.embeddedframework/Resources/vg_mute_on.png" />
 		<resource-file src="src/ios/AdNetworks/VungleSDK.embeddedframework/Resources/vg_timer.png" />
 -->
-<!--
 		<framework src="src/ios/AdNetworks/VungleSDK/VungleSDK.framework" custom="true" />
 		<resource-file src="src/ios/AdNetworks/VungleSDK/Resources/__vungle.db"/>
 		<resource-file src="src/ios/AdNetworks/VungleSDK/Resources/vg_close.png"/>
@@ -427,7 +389,28 @@
 		<resource-file src="src/ios/AdNetworks/VungleSDK/Resources/vg_mute_off.png"/>
 		<resource-file src="src/ios/AdNetworks/VungleSDK/Resources/vg_mute_on.png"/>
 		<resource-file src="src/ios/AdNetworks/VungleSDK/Resources/vg_timer.png"/>
--->		
-		<dependency id="cordova-plugin-ad-vungle" url="https://github.com/cranberrygame/cordova-plugin-ad-vungle" />		
+        <framework src="AdSupport.framework" />
+        <framework src="AVFoundation.framework" />
+        <framework src="AudioToolbox.framework" />
+        <framework src="CoreTelephony.framework" />
+        <framework src="CoreGraphics.framework" />
+        <framework src="EventKit.framework" />
+        <framework src="EventKitUI.framework" />
+        <framework src="MessageUI.framework" />
+        <framework src="StoreKit.framework" />
+        <framework src="SystemConfiguration.framework" />
+        <framework src="CoreLocation.framework" />
+        <framework src="UIKit.framework" />
+        <framework src="CoreMedia.framework" />
+        <framework src="MediaPlayer.framework" />
+        <framework src="QuartzCore.framework" />
+        <framework src="CoreImage.framework" />
+        <framework src="CoreFoundation.framework" />
+        <framework src="Social.framework" />
+        <framework src="WebKit.framework" />
+        <framework src="CFNetwork.framework" />
+        <framework src="libz.dylib" />
+        <framework src="libsqlite3.dylib" />
+        <framework src="libxml2.dylib" />
 	</platform>
 </plugin>
