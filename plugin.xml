@@ -2,7 +2,7 @@
 
 <plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
            id="cordova-plugin-ad-appodeal"
-      version="1.0.46">
+      version="1.0.48">
 	  
     <name>Cordova Appodeal plugin</name>
     <description>Show appodeal banner ad, full screen ad and rewarded video ad.</description>
@@ -110,12 +110,38 @@
 		<header-file src="src/ios/AppodealPlugin.h" />
 		<source-file src="src/ios/AppodealPlugin.m" />
 		
+        <framework src="AdSupport.framework" />
+        <framework src="AVFoundation.framework" />
+        <framework src="AudioToolbox.framework" />
+        <framework src="CoreTelephony.framework" />
+        <framework src="CoreGraphics.framework" />
+        <framework src="EventKit.framework" />
+        <framework src="EventKitUI.framework" />
+        <framework src="MessageUI.framework" />
+        <framework src="StoreKit.framework" />
+        <framework src="SystemConfiguration.framework" />
+        <framework src="CoreLocation.framework" />
+        <framework src="UIKit.framework" />
+        <framework src="CoreMedia.framework" />
+        <framework src="MediaPlayer.framework" />
+        <framework src="QuartzCore.framework" />
+        <framework src="CoreImage.framework" />
+        <framework src="CoreFoundation.framework" />
+        <framework src="Social.framework" />
+        <framework src="WebKit.framework" />
+        <framework src="CFNetwork.framework" />
+        <framework src="libz.dylib" />
+        <framework src="libsqlite3.dylib" />
+        <framework src="libxml2.dylib" />		
 		<framework src="src/ios/AppodealAds.framework" custom="true" />
-        <framework src="src/ios/AdNetworks/AdColony.framework" custom="true" />
+        <!--framework src="src/ios/AdNetworks/AdColony.framework" custom="true" /-->
+		<dependency id="cordova-plugin-ad-adcolony" url="https://github.com/cranberrygame/cordova-plugin-ad-adcolony" />
         <framework src="src/ios/AdNetworks/AerServSDK.framework" custom="true" />
 		<framework src="src/ios/AdNetworks/AmazonAd.framework" custom="true" />
-		<framework src="src/ios/AdNetworks/Chartboost.framework" custom="true" />
-        <framework src="src/ios/AdNetworks/GoogleMobileAds.framework" custom="true" />
+		<!--framework src="src/ios/AdNetworks/Chartboost.framework" custom="true" /-->
+		<dependency id="cordova-plugin-ad-chartboost" url="https://github.com/cranberrygame/cordova-plugin-ad-chartboost" />
+        <!--framework src="src/ios/AdNetworks/GoogleMobileAds.framework" custom="true" /-->
+		<dependency id="cordova-plugin-ad-admob" url="https://github.com/cranberrygame/cordova-plugin-ad-admob" />
 		<header-file src="src/ios/AdNetworks/MoPubSDK/MoPub.h" />
 		<source-file src="src/ios/AdNetworks/MoPubSDK/MoPub.m" />
 		<header-file src="src/ios/AdNetworks/MoPubSDK/MoPub-Bridging-Header.h" />
@@ -370,8 +396,11 @@
         <resource-file src="src/ios/AdNetworks/MoPub.framework/Resources/MPCloseButtonX@2x.png"/>
         <resource-file src="src/ios/AdNetworks/MoPub.framework/Resources/MRAID.bundle"/>
 -->		
+<!--
         <framework src="src/ios/AdNetworks/UnityAds.framework" custom="true" />
         <resource-file src="src/ios/AdNetworks/UnityAds.bundle" />		
+-->		
+		<dependency id="cordova-plugin-ad-unityads" url="https://github.com/cranberrygame/cordova-plugin-ad-unityads" />		
 		<!--framework src="src/ios/AdNetworks/VungleSDK.embeddedframework" custom="true" /--><!--build error-->
 <!--		
 		<framework src="src/ios/AdNetworks/VungleSDK.embeddedframework/VungleSDK.framework" custom="true" />
@@ -382,6 +411,7 @@
 		<resource-file src="src/ios/AdNetworks/VungleSDK.embeddedframework/Resources/vg_mute_on.png" />
 		<resource-file src="src/ios/AdNetworks/VungleSDK.embeddedframework/Resources/vg_timer.png" />
 -->
+<!--
 		<framework src="src/ios/AdNetworks/VungleSDK/VungleSDK.framework" custom="true" />
 		<resource-file src="src/ios/AdNetworks/VungleSDK/Resources/__vungle.db"/>
 		<resource-file src="src/ios/AdNetworks/VungleSDK/Resources/vg_close.png"/>
@@ -389,28 +419,7 @@
 		<resource-file src="src/ios/AdNetworks/VungleSDK/Resources/vg_mute_off.png"/>
 		<resource-file src="src/ios/AdNetworks/VungleSDK/Resources/vg_mute_on.png"/>
 		<resource-file src="src/ios/AdNetworks/VungleSDK/Resources/vg_timer.png"/>
-        <framework src="AdSupport.framework" />
-        <framework src="AVFoundation.framework" />
-        <framework src="AudioToolbox.framework" />
-        <framework src="CoreTelephony.framework" />
-        <framework src="CoreGraphics.framework" />
-        <framework src="EventKit.framework" />
-        <framework src="EventKitUI.framework" />
-        <framework src="MessageUI.framework" />
-        <framework src="StoreKit.framework" />
-        <framework src="SystemConfiguration.framework" />
-        <framework src="CoreLocation.framework" />
-        <framework src="UIKit.framework" />
-        <framework src="CoreMedia.framework" />
-        <framework src="MediaPlayer.framework" />
-        <framework src="QuartzCore.framework" />
-        <framework src="CoreImage.framework" />
-        <framework src="CoreFoundation.framework" />
-        <framework src="Social.framework" />
-        <framework src="WebKit.framework" />
-        <framework src="CFNetwork.framework" />
-        <framework src="libz.dylib" />
-        <framework src="libsqlite3.dylib" />
-        <framework src="libxml2.dylib" />
+-->		
+		<dependency id="cordova-plugin-ad-vungle" url="https://github.com/cranberrygame/cordova-plugin-ad-vungle" />		
 	</platform>
 </plugin>
