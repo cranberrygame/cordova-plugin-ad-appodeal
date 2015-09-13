@@ -3,28 +3,12 @@ Cordova Appodeal plugin
 # Overview #
 show appodeal banner ad, full screen ad and rewarded video ad.
 
-[android, ios] [cordova cli] [xdk] [cocoon]
+[android, ios] [cordova cli] [xdk] [cocoon] [phonegap build service]
 
 requires appodeal account http://appodeal.com/+6ba27c77d92d2eb5cdbb47ee677b1c83
 
 [Appodeal android SDK 1.12.2]<br>
-appodeal-1.12.2.jar<br>
-applovin-sdk-5.4.3.jar<br>
-chartboost-5.2.0.jar<br>
-supersonic-sdk-5.14.jar<br>
-unity-ads-1.3.12.jar<br>
-
-[Appodeal ios SDK 0.2.3]<br>
-AdColony.framework<br>
-AerServSDK.framework<br>
-AmazonAd.framework<br>
-AppodealAds.framework (0.2.3)<br>
-Applovin 2.5.4 (need to check)<br>
-Chartboost.framework (5.1.3)<br>
-GoogleMobileAds.framework (7.2.2)<br>
-MoPub.framework (3.5.0)<br>
-UnityAds.framework<br>
-VungleSDK (replace original with vungle 3.0.11 by cranberrygame because of xdk ios duplicate symbol build issue)
+[Appodeal ios SDK 0.2.3]
 
 This is open source cordova plugin.
 
@@ -43,10 +27,11 @@ To-Do:
 https://cordova.apache.org/docs/en/edge/guide_cli_index.md.html#The%20Command-Line%20Interface - npm install -g cordova@5.0.0
 ```c
 cordova plugin add cordova-plugin-ad-appodeal
+(when build error, use github url: cordova plugin add cordova plugin add https://github.com/cranberrygame/cordova-plugin-ad-appodeal)
 ```
 
 ## Xdk ##
-https://software.intel.com/en-us/intel-xdk - Download XDK - XDK PORJECTS - [specific project] - CORDOVA 3.X HYBRID MOBILE APP SETTINGS - PLUGINS - Third Party Plugins - Add a Third Party Plugin - Get Plugin from the Web -
+https://software.intel.com/en-us/intel-xdk - Download XDK - XDK PORJECTS - [specific project] - CORDOVA HYBRID MOBILE APP SETTINGS - Plugins - Third Party Plugins - Add a Third Party Plugin - Get Plugin from the Web -
 ```c
 Name: appodeal
 Plugin ID: com.cranberrygame.cordova.plugin.ad.appodeal
@@ -63,7 +48,10 @@ https://build.phonegap.com/ - Apps - [specific project] - Update code - Zip file
 ```
 
 ## Construct2 ##
-Download construct2 plugin: https://dl.dropboxusercontent.com/u/186681453/pluginsforcordova/index.html
+Download construct2 plugin<br>
+https://dl.dropboxusercontent.com/u/186681453/pluginsforcordova/index.html<br>
+How to install c2 native plugins in xdk, cocoon and cordova cli<br>
+https://plus.google.com/102658703990850475314/posts/XS5jjEApJYV
 
 # Server setting #
 ```c
@@ -92,8 +80,8 @@ else if (navigator.userAgent.match(/iPhone/i) || navigator.userAgent.match(/iPad
 
 document.addEventListener("deviceready", function(){
 	//if no license key, 2% ad traffic share for dev support.
-	//you can get free license key from https://play.google.com/store/apps/details?id=com.cranberrygame.pluginsforcordova
-	//window.appodeal.setLicenseKey("yourEmailId@yourEmaildDamin.com", "yourFreeLicenseKey");
+	//you can get paid license key: https://cranberrygame.github.io/request_cordova_ad_plugin_paid_license_key
+	//window.appodeal.setLicenseKey("yourEmailId@yourEmaildDamin.com", "yourLicenseKey");
 	
 	window.appodeal.setUp(applicationKey, isOverlap, isTest);
 
