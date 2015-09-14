@@ -2,7 +2,7 @@
 
 <plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
            id="cordova-plugin-ad-appodeal"
-      version="1.0.54">
+      version="1.0.56"> 
 	  
     <name>Cordova Appodeal plugin</name>
     <description>Show appodeal banner ad, interstitial ad and rewarded video ad.</description>
