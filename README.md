@@ -31,12 +31,10 @@ cordova plugin add cordova-plugin-ad-appodeal
 ```
 
 ## Xdk ##
-https://software.intel.com/en-us/intel-xdk - Download XDK - XDK PORJECTS - [specific project] - CORDOVA HYBRID MOBILE APP SETTINGS - Plugins - Third Party Plugins - Add a Third Party Plugin - Get Plugin from the Web -
+https://software.intel.com/en-us/intel-xdk - Download XDK - XDK PORJECTS - [specific project] - CORDOVA HYBRID MOBILE APP SETTINGS - Plugin Management - Add Plugins to this Project - Third Party Plugins -
 ```c
-Name: appodeal
+Plugin Source: Cordova plugin registry
 Plugin ID: cordova-plugin-ad-appodeal
-[Do not check] Plugin is located in the Apache Cordova Plugins Registry
-Repo URL: https://github.com/cranberrygame/cordova-plugin-ad-appodeal
 ```
 
 ## Cocoon ##
@@ -153,7 +151,7 @@ https://dl.dropboxusercontent.com/u/186681453/pluginsforcordova/appodeal/apk.htm
 
 # Useful links #
 
-Plugins For Cordova<br>
+Cordova Plugins<br>
 http://cranberrygame.github.io?referrer=github
 
 # Credits #

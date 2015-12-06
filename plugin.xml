@@ -2,7 +2,7 @@
 
 <plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
            id="cordova-plugin-ad-appodeal"
-      version="1.0.56"> 
+      version="1.0.57"> 
 	  
     <name>Cordova Appodeal plugin</name>
     <description>Show appodeal banner ad, interstitial ad and rewarded video ad.</description>
@@ -129,6 +129,7 @@
         <framework src="CoreLocation.framework" />
         <framework src="UIKit.framework" />
         <framework src="CoreMedia.framework" />
+        <framework src="CoreMotion.framework" />
         <framework src="MediaPlayer.framework" />
         <framework src="QuartzCore.framework" />
         <framework src="CoreImage.framework" />
